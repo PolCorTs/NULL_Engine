@@ -1,8 +1,8 @@
 {
     "Game Objects": [
         {
-            "UID": 52628059,
-            "ParentUID": 1178690692,
+            "UID": 1058298566,
+            "ParentUID": 1220136572,
             "Name": "MainScene",
             "IsActive": true,
             "IsStatic": false,
@@ -12,360 +12,11 @@
                 {
                     "Type": 1,
                     "LocalPosition": [
-                        0.10588455200195313,
-                        0,
-                        0.02794647216796875
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0,
-                        1
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                }
-            ]
-        },
-        {
-            "UID": 231374176,
-            "ParentUID": 454890600,
-            "Name": "City_building_030",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        -42.807239532470703,
-                        -41.835563659667969,
-                        -9.3834518111179932e-07
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        -0.70710676908493042,
-                        0.70710676908493042
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 1362226373,
-                    "Name": "City_building_030.nemesh",
-                    "Path": "Library\/Meshes\/1362226373.nemesh",
-                    "File": "1362226373.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 2120216097,
-                        "Path": "Library\/Materials\/2120216097.nemat",
-                        "File": "2120216097.nemat"
-                    },
-                    "Texture": {
-                        "UID": 2128929045,
-                        "Name": "Building_V01_C.png",
-                        "Path": "Library\/Textures\/2128929045.netex",
-                        "File": "2128929045.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 235887333,
-            "ParentUID": 454890600,
-            "Name": "City_building_013",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        -42.288055419921875,
-                        33.201576232910156,
-                        5.0146070407208754e-07
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0.70710676908493042,
-                        0.70710676908493042
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 1565863989,
-                    "Name": "City_building_013.nemesh",
-                    "Path": "Library\/Meshes\/1565863989.nemesh",
-                    "File": "1565863989.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 2115384559,
-                        "Path": "Library\/Materials\/2115384559.nemat",
-                        "File": "2115384559.nemat"
-                    },
-                    "Texture": {
-                        "UID": 759870879,
-                        "Name": "building 06_ c.tga",
-                        "Path": "Library\/Textures\/759870879.netex",
-                        "File": "759870879.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 349437218,
-            "ParentUID": 1436775836,
-            "Name": "Camera001",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        -78.312431335449219,
-                        45.251216888427734,
-                        -97.031112670898438
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0,
-                        1
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                }
-            ]
-        },
-        {
-            "UID": 363352888,
-            "ParentUID": 454890600,
-            "Name": "City_building_001",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        17.707164764404297,
-                        20.053276062011719,
-                        2.1210729528320371e-07
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0,
-                        1
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 204762356,
-                    "Name": "City_building_001.nemesh",
-                    "Path": "Library\/Meshes\/204762356.nemesh",
-                    "File": "204762356.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 1636573899,
-                        "Path": "Library\/Materials\/1636573899.nemat",
-                        "File": "1636573899.nemat"
-                    },
-                    "Texture": {
-                        "UID": 871563400,
-                        "Name": "Building_V02_C.png",
-                        "Path": "Library\/Textures\/871563400.netex",
-                        "File": "871563400.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 454890600,
-            "ParentUID": 1436775836,
-            "Name": "Dummy001",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
                         0,
                         0,
                         0
                     ],
                     "LocalRotation": [
-                        -0.70710676908493042,
-                        0,
-                        0,
-                        0.70710676908493042
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                }
-            ]
-        },
-        {
-            "UID": 620915457,
-            "ParentUID": 454890600,
-            "Name": "City_building_032",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        -29.478403091430664,
-                        21.01409912109375,
-                        0
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0,
-                        1
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 1836443395,
-                    "Name": "City_building_032.nemesh",
-                    "Path": "Library\/Meshes\/1836443395.nemesh",
-                    "File": "1836443395.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 518276897,
-                        "Path": "Library\/Materials\/518276897.nemat",
-                        "File": "518276897.nemat"
-                    },
-                    "Texture": {
-                        "UID": 935609143,
-                        "Name": "building03_c.tga",
-                        "Path": "Library\/Textures\/935609143.netex",
-                        "File": "935609143.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 681089159,
-            "ParentUID": 454890600,
-            "Name": "Object010",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        -2.5033531188964844,
-                        15.800846099853516,
-                        0
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0,
-                        1
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 91068025,
-                    "Name": "Object010.nemesh",
-                    "Path": "Library\/Meshes\/91068025.nemesh",
-                    "File": "91068025.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 415248176,
-                        "Path": "Library\/Materials\/415248176.nemat",
-                        "File": "415248176.nemat"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 742045942,
-            "ParentUID": 1436775836,
-            "Name": "Camera001.Target",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        -28.132621765136719,
-                        20.873329162597656,
-                        -35.064212799072266
-                    ],
-                    "LocalRotation": [
                         0,
                         0,
                         0,
@@ -380,435 +31,8 @@
             ]
         },
         {
-            "UID": 816536810,
-            "ParentUID": 454890600,
-            "Name": "Plane001",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        -0.02860260009765625,
-                        0.026032090187072754,
-                        0
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0,
-                        1
-                    ],
-                    "LocalScale": [
-                        0.99663525819778442,
-                        0.97061645984649658,
-                        0.99663525819778442
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 2096836421,
-                    "Name": "Plane001.nemesh",
-                    "Path": "Library\/Meshes\/2096836421.nemesh",
-                    "File": "2096836421.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 551863792,
-                        "Path": "Library\/Materials\/551863792.nemat",
-                        "File": "551863792.nemat"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 847868902,
-            "ParentUID": 454890600,
-            "Name": "City_building_028",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        13.38798999786377,
-                        -33.755039215087891,
-                        -9.3834518111179932e-07
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0,
-                        1
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 99132666,
-                    "Name": "City_building_028.nemesh",
-                    "Path": "Library\/Meshes\/99132666.nemesh",
-                    "File": "99132666.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 33057392,
-                        "Path": "Library\/Materials\/33057392.nemat",
-                        "File": "33057392.nemat"
-                    },
-                    "Texture": {
-                        "UID": 1533702495,
-                        "Name": "Building_V01_C.png",
-                        "Path": "Library\/Textures\/1533702495.netex",
-                        "File": "1533702495.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 881210595,
-            "ParentUID": 454890600,
-            "Name": "City_building_038",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": true,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        -41.649002075195313,
-                        -16.495393753051758,
-                        0
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        -0.7071068286895752,
-                        0.70710670948028564
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 2025999203,
-                    "Name": "City_building_038.nemesh",
-                    "Path": "Library\/Meshes\/2025999203.nemesh",
-                    "File": "2025999203.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 1161569017,
-                        "Path": "Library\/Materials\/1161569017.nemat",
-                        "File": "1161569017.nemat"
-                    },
-                    "Texture": {
-                        "UID": 1804837478,
-                        "Name": "building05 _c.tga",
-                        "Path": "Library\/Textures\/1804837478.netex",
-                        "File": "1804837478.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 943612112,
-            "ParentUID": 454890600,
-            "Name": "City_building_022",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        -20.831323623657227,
-                        -27.426488876342773,
-                        0
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        1,
-                        1.9470718370939721e-07
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 1299207095,
-                    "Name": "City_building_022.nemesh",
-                    "Path": "Library\/Meshes\/1299207095.nemesh",
-                    "File": "1299207095.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 990603913,
-                        "Path": "Library\/Materials\/990603913.nemat",
-                        "File": "990603913.nemat"
-                    },
-                    "Texture": {
-                        "UID": 397703568,
-                        "Name": "building05 _c.tga",
-                        "Path": "Library\/Textures\/397703568.netex",
-                        "File": "397703568.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 955406789,
-            "ParentUID": 454890600,
-            "Name": "City_building_004",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        -41.47589111328125,
-                        21.01409912109375,
-                        0
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0,
-                        1
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 1572361920,
-                    "Name": "City_building_004.nemesh",
-                    "Path": "Library\/Meshes\/1572361920.nemesh",
-                    "File": "1572361920.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 1944197005,
-                        "Path": "Library\/Materials\/1944197005.nemat",
-                        "File": "1944197005.nemat"
-                    },
-                    "Texture": {
-                        "UID": 1045414695,
-                        "Name": "building03_c.tga",
-                        "Path": "Library\/Textures\/1045414695.netex",
-                        "File": "1045414695.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 1031312650,
-            "ParentUID": 454890600,
-            "Name": "City_building_010",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        25.154010772705078,
-                        -39.153720855712891,
-                        8.5538641769744572e-07
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0.70710676908493042,
-                        0.70710676908493042
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 1190377648,
-                    "Name": "City_building_010.nemesh",
-                    "Path": "Library\/Meshes\/1190377648.nemesh",
-                    "File": "1190377648.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 1548066159,
-                        "Path": "Library\/Materials\/1548066159.nemat",
-                        "File": "1548066159.nemat"
-                    },
-                    "Texture": {
-                        "UID": 4780103,
-                        "Name": "building 01_c.tga",
-                        "Path": "Library\/Textures\/4780103.netex",
-                        "File": "4780103.netex"
-                    }
-                },
-                {
-                    "Type": 2,
-                    "UID": 1503826621,
-                    "Name": "City_building_010.nemesh",
-                    "Path": "Library\/Meshes\/1503826621.nemesh",
-                    "File": "1503826621.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                }
-            ]
-        },
-        {
-            "UID": 1078795084,
-            "ParentUID": 454890600,
-            "Name": "City_building_031",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        -34.679481506347656,
-                        -41.835563659667969,
-                        -9.3834518111179932e-07
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        -0.70710676908493042,
-                        0.70710676908493042
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 1669578934,
-                    "Name": "City_building_031.nemesh",
-                    "Path": "Library\/Meshes\/1669578934.nemesh",
-                    "File": "1669578934.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 658842417,
-                        "Path": "Library\/Materials\/658842417.nemat",
-                        "File": "658842417.nemat"
-                    },
-                    "Texture": {
-                        "UID": 1164697684,
-                        "Name": "Building_V01_C.png",
-                        "Path": "Library\/Textures\/1164697684.netex",
-                        "File": "1164697684.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 1112917953,
-            "ParentUID": 454890600,
-            "Name": "City_building_008",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        40.979995727539063,
-                        18.270824432373047,
-                        -2.0522466002148576e-06
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0.70710676908493042,
-                        0.70710676908493042
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 872782416,
-                    "Name": "City_building_008.nemesh",
-                    "Path": "Library\/Meshes\/872782416.nemesh",
-                    "File": "872782416.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 1694701156,
-                        "Path": "Library\/Materials\/1694701156.nemat",
-                        "File": "1694701156.nemat"
-                    },
-                    "Texture": {
-                        "UID": 1890132049,
-                        "Name": "building_025_c.tga",
-                        "Path": "Library\/Textures\/1890132049.netex",
-                        "File": "1890132049.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 1163067214,
-            "ParentUID": 52628059,
+            "UID": 510727135,
+            "ParentUID": 1058298566,
             "Name": "SceneCamera",
             "IsActive": true,
             "IsStatic": false,
@@ -845,220 +69,8 @@
             ]
         },
         {
-            "UID": 1300043231,
-            "ParentUID": 454890600,
-            "Name": "City_building_033",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        -32.361495971679688,
-                        42.37042236328125,
-                        5.0146070407208754e-07
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0,
-                        1
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 784923515,
-                    "Name": "City_building_033.nemesh",
-                    "Path": "Library\/Meshes\/784923515.nemesh",
-                    "File": "784923515.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 1799158247,
-                        "Path": "Library\/Materials\/1799158247.nemat",
-                        "File": "1799158247.nemat"
-                    },
-                    "Texture": {
-                        "UID": 770152171,
-                        "Name": "building 06_ c.tga",
-                        "Path": "Library\/Textures\/770152171.netex",
-                        "File": "770152171.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 1309808895,
-            "ParentUID": 454890600,
-            "Name": "City_building_037",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        -20.317693710327148,
-                        -16.163608551025391,
-                        0
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        1,
-                        1.9470718370939721e-07
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 1836829555,
-                    "Name": "City_building_037.nemesh",
-                    "Path": "Library\/Meshes\/1836829555.nemesh",
-                    "File": "1836829555.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 1442876610,
-                        "Path": "Library\/Materials\/1442876610.nemat",
-                        "File": "1442876610.nemat"
-                    },
-                    "Texture": {
-                        "UID": 1669909091,
-                        "Name": "building05 _c.tga",
-                        "Path": "Library\/Textures\/1669909091.netex",
-                        "File": "1669909091.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 1354041310,
-            "ParentUID": 454890600,
-            "Name": "City_building_024",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        -20.572771072387695,
-                        43.060829162597656,
-                        -0.069194458425045013
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        1,
-                        4.3711388286737929e-08
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 1641379567,
-                    "Name": "City_building_024.nemesh",
-                    "Path": "Library\/Meshes\/1641379567.nemesh",
-                    "File": "1641379567.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 765767713,
-                        "Path": "Library\/Materials\/765767713.nemat",
-                        "File": "765767713.nemat"
-                    },
-                    "Texture": {
-                        "UID": 84926351,
-                        "Name": "building_025_c.tga",
-                        "Path": "Library\/Textures\/84926351.netex",
-                        "File": "84926351.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 1430189238,
-            "ParentUID": 454890600,
-            "Name": "City_building_026",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        31.51188850402832,
-                        -16.446016311645508,
-                        0
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        1,
-                        4.3711388286737929e-08
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 1762393499,
-                    "Name": "City_building_026.nemesh",
-                    "Path": "Library\/Meshes\/1762393499.nemesh",
-                    "File": "1762393499.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 1186832975,
-                        "Path": "Library\/Materials\/1186832975.nemat",
-                        "File": "1186832975.nemat"
-                    },
-                    "Texture": {
-                        "UID": 1917750503,
-                        "Name": "building05 _c.tga",
-                        "Path": "Library\/Textures\/1917750503.netex",
-                        "File": "1917750503.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 1436775836,
-            "ParentUID": 52628059,
+            "UID": 1663071646,
+            "ParentUID": 1058298566,
             "Name": "Street Environment_V01.FBX",
             "IsActive": true,
             "IsStatic": false,
@@ -1087,557 +99,8 @@
             ]
         },
         {
-            "UID": 1487862888,
-            "ParentUID": 1436775836,
-            "Name": "Spot001.Target",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        28.890945434570313,
-                        -60.963882446289063,
-                        -2.6648158382158726e-06
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0,
-                        1
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                }
-            ]
-        },
-        {
-            "UID": 1540632265,
-            "ParentUID": 454890600,
-            "Name": "Line002",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        -2.1597719192504883,
-                        1.8538382053375244,
-                        0
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        -0.70710676908493042,
-                        0.70710676908493042
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 1509165563,
-                    "Name": "Line002.nemesh",
-                    "Path": "Library\/Meshes\/1509165563.nemesh",
-                    "File": "1509165563.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 1091971377,
-                        "Path": "Library\/Materials\/1091971377.nemat",
-                        "File": "1091971377.nemat"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 1579134546,
-            "ParentUID": 1436775836,
-            "Name": "Spot001",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        -66.721267700195313,
-                        141.93412780761719,
-                        6.2041376622801181e-06
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0,
-                        1
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                }
-            ]
-        },
-        {
-            "UID": 1580090980,
-            "ParentUID": 454890600,
-            "Name": "City_building_035",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        13.38798999786377,
-                        -40.802516937255859,
-                        -9.3834518111179932e-07
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0,
-                        1
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 252775833,
-                    "Name": "City_building_035.nemesh",
-                    "Path": "Library\/Meshes\/252775833.nemesh",
-                    "File": "252775833.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 1547226549,
-                        "Path": "Library\/Materials\/1547226549.nemat",
-                        "File": "1547226549.nemat"
-                    },
-                    "Texture": {
-                        "UID": 1679834409,
-                        "Name": "Building_V01_C.png",
-                        "Path": "Library\/Textures\/1679834409.netex",
-                        "File": "1679834409.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 1588685580,
-            "ParentUID": 454890600,
-            "Name": "City_building_007",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        16.010492324829102,
-                        37.4932861328125,
-                        -1.5106878663573298e-06
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0,
-                        1
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 2103337425,
-                    "Name": "City_building_007.nemesh",
-                    "Path": "Library\/Meshes\/2103337425.nemesh",
-                    "File": "2103337425.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 522129439,
-                        "Path": "Library\/Materials\/522129439.nemat",
-                        "File": "522129439.nemat"
-                    },
-                    "Texture": {
-                        "UID": 717979850,
-                        "Name": "building_016_c.tga",
-                        "Path": "Library\/Textures\/717979850.netex",
-                        "File": "717979850.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 1615371112,
-            "ParentUID": 454890600,
-            "Name": "City_building_023",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        42.130641937255859,
-                        37.4932861328125,
-                        -1.5106878663573298e-06
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0,
-                        1
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 319082019,
-                    "Name": "City_building_023.nemesh",
-                    "Path": "Library\/Meshes\/319082019.nemesh",
-                    "File": "319082019.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 1489022695,
-                        "Path": "Library\/Materials\/1489022695.nemat",
-                        "File": "1489022695.nemat"
-                    },
-                    "Texture": {
-                        "UID": 1770956964,
-                        "Name": "building_016_c.tga",
-                        "Path": "Library\/Textures\/1770956964.netex",
-                        "File": "1770956964.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 1755122164,
-            "ParentUID": 454890600,
-            "Name": "City_building_036",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        -31.216331481933594,
-                        33.201576232910156,
-                        5.0146070407208754e-07
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        -0.70710676908493042,
-                        0.70710676908493042
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 162638468,
-                    "Name": "City_building_036.nemesh",
-                    "Path": "Library\/Meshes\/162638468.nemesh",
-                    "File": "162638468.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 1024292409,
-                        "Path": "Library\/Materials\/1024292409.nemat",
-                        "File": "1024292409.nemat"
-                    },
-                    "Texture": {
-                        "UID": 772341060,
-                        "Name": "building 06_ c.tga",
-                        "Path": "Library\/Textures\/772341060.netex",
-                        "File": "772341060.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 1811369785,
-            "ParentUID": 454890600,
-            "Name": "City_building_017",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        44.260082244873047,
-                        -39.153720855712891,
-                        8.5538641769744572e-07
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0.70710676908493042,
-                        0.70710676908493042
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 2025896909,
-                    "Name": "City_building_017.nemesh",
-                    "Path": "Library\/Meshes\/2025896909.nemesh",
-                    "File": "2025896909.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 1791885099,
-                        "Path": "Library\/Materials\/1791885099.nemat",
-                        "File": "1791885099.nemat"
-                    },
-                    "Texture": {
-                        "UID": 1212455955,
-                        "Name": "building 01_c.tga",
-                        "Path": "Library\/Textures\/1212455955.netex",
-                        "File": "1212455955.netex"
-                    }
-                },
-                {
-                    "Type": 2,
-                    "UID": 2119129883,
-                    "Name": "City_building_017.nemesh",
-                    "Path": "Library\/Meshes\/2119129883.nemesh",
-                    "File": "2119129883.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                }
-            ]
-        },
-        {
-            "UID": 2015731966,
-            "ParentUID": 454890600,
-            "Name": "City_building_014",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        -19.439706802368164,
-                        32.061729431152344,
-                        0
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        1,
-                        -4.3711388286737929e-08
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 63364384,
-                    "Name": "City_building_014.nemesh",
-                    "Path": "Library\/Meshes\/63364384.nemesh",
-                    "File": "63364384.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 12112597,
-                        "Path": "Library\/Materials\/12112597.nemat",
-                        "File": "12112597.nemat"
-                    },
-                    "Texture": {
-                        "UID": 1477526113,
-                        "Name": "building03_c.tga",
-                        "Path": "Library\/Textures\/1477526113.netex",
-                        "File": "1477526113.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 2018763493,
-            "ParentUID": 454890600,
-            "Name": "City_building_016",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        34.270423889160156,
-                        -41.972747802734375,
-                        8.5538641769744572e-07
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        1,
-                        -4.3711388286737929e-08
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 479513512,
-                    "Name": "City_building_016.nemesh",
-                    "Path": "Library\/Meshes\/479513512.nemesh",
-                    "File": "479513512.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 1382022696,
-                        "Path": "Library\/Materials\/1382022696.nemat",
-                        "File": "1382022696.nemat"
-                    },
-                    "Texture": {
-                        "UID": 1944798028,
-                        "Name": "building 01_c.tga",
-                        "Path": "Library\/Textures\/1944798028.netex",
-                        "File": "1944798028.netex"
-                    }
-                },
-                {
-                    "Type": 2,
-                    "UID": 1455837718,
-                    "Name": "City_building_016.nemesh",
-                    "Path": "Library\/Meshes\/1455837718.nemesh",
-                    "File": "1455837718.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                }
-            ]
-        },
-        {
-            "UID": 2053714074,
-            "ParentUID": 454890600,
-            "Name": "City_building_041",
-            "IsActive": true,
-            "IsStatic": false,
-            "IsSceneRoot": false,
-            "ShowBoundingBoxes": false,
-            "Components": [
-                {
-                    "Type": 1,
-                    "LocalPosition": [
-                        30.695278167724609,
-                        21.612646102905273,
-                        2.1210729528320371e-07
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0.70710676908493042,
-                        0.70710676908493042
-                    ],
-                    "LocalScale": [
-                        1,
-                        1,
-                        1
-                    ]
-                },
-                {
-                    "Type": 2,
-                    "UID": 2045992517,
-                    "Name": "City_building_041.nemesh",
-                    "Path": "Library\/Meshes\/2045992517.nemesh",
-                    "File": "2045992517.nemesh",
-                    "ShowWireframe": false,
-                    "ShowBoundingBox": false
-                },
-                {
-                    "Type": 3,
-                    "Material": {
-                        "UID": 1622926520,
-                        "Path": "Library\/Materials\/1622926520.nemat",
-                        "File": "1622926520.nemat"
-                    },
-                    "Texture": {
-                        "UID": 2062645662,
-                        "Name": "Building_V02_C.png",
-                        "Path": "Library\/Textures\/2062645662.netex",
-                        "File": "2062645662.netex"
-                    }
-                }
-            ]
-        },
-        {
-            "UID": 2054128382,
-            "ParentUID": 1436775836,
+            "UID": 1523025774,
+            "ParentUID": 1663071646,
             "Name": "Sky001",
             "IsActive": true,
             "IsStatic": false,
@@ -1666,9 +129,9 @@
             ]
         },
         {
-            "UID": 2103293426,
-            "ParentUID": 454890600,
-            "Name": "City_building_034",
+            "UID": 1703522091,
+            "ParentUID": 1663071646,
+            "Name": "Dummy001",
             "IsActive": true,
             "IsStatic": false,
             "IsSceneRoot": false,
@@ -1677,15 +140,45 @@
                 {
                     "Type": 1,
                     "LocalPosition": [
-                        16.049516677856445,
-                        -16.696884155273438,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        -0.70710676908493042,
+                        0,
+                        0,
+                        0.70710676908493042
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                }
+            ]
+        },
+        {
+            "UID": 263519823,
+            "ParentUID": 1703522091,
+            "Name": "City_building_004",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -41.47589111328125,
+                        21.01409912109375,
                         0
                     ],
                     "LocalRotation": [
                         0,
                         0,
-                        -0.7071068286895752,
-                        0.70710670948028564
+                        0,
+                        1
                     ],
                     "LocalScale": [
                         1,
@@ -1695,33 +188,33 @@
                 },
                 {
                     "Type": 2,
-                    "UID": 289992650,
-                    "Name": "City_building_034.nemesh",
-                    "Path": "Library\/Meshes\/289992650.nemesh",
-                    "File": "289992650.nemesh",
+                    "UID": 109665095,
+                    "Name": "City_building_004.nemesh",
+                    "Path": "Library\/Meshes\/109665095.nemesh",
+                    "File": "109665095.nemesh",
                     "ShowWireframe": false,
                     "ShowBoundingBox": false
                 },
                 {
                     "Type": 3,
                     "Material": {
-                        "UID": 2003508190,
-                        "Path": "Library\/Materials\/2003508190.nemat",
-                        "File": "2003508190.nemat"
+                        "UID": 387019542,
+                        "Path": "Library\/Materials\/387019542.nemat",
+                        "File": "387019542.nemat"
                     },
                     "Texture": {
-                        "UID": 738372399,
-                        "Name": "building05 _c.tga",
-                        "Path": "Library\/Textures\/738372399.netex",
-                        "File": "738372399.netex"
+                        "UID": 210214673,
+                        "Name": "building03_c.tga",
+                        "Path": "Library\/Textures\/210214673.netex",
+                        "File": "210214673.netex"
                     }
                 }
             ]
         },
         {
-            "UID": 2106012177,
-            "ParentUID": 454890600,
-            "Name": "City_building_039",
+            "UID": 322222709,
+            "ParentUID": 1703522091,
+            "Name": "City_building_001",
             "IsActive": true,
             "IsStatic": false,
             "IsSceneRoot": false,
@@ -1730,9 +223,168 @@
                 {
                     "Type": 1,
                     "LocalPosition": [
-                        -42.807239532470703,
-                        -30.643888473510742,
-                        -9.3834518111179932e-07
+                        17.707164764404297,
+                        20.053276062011719,
+                        2.1210729528320371e-07
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 1305922682,
+                    "Name": "City_building_001.nemesh",
+                    "Path": "Library\/Meshes\/1305922682.nemesh",
+                    "File": "1305922682.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 1217636518,
+                        "Path": "Library\/Materials\/1217636518.nemat",
+                        "File": "1217636518.nemat"
+                    },
+                    "Texture": {
+                        "UID": 1155054353,
+                        "Name": "Building_V02_C.png",
+                        "Path": "Library\/Textures\/1155054353.netex",
+                        "File": "1155054353.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 1109905171,
+            "ParentUID": 1703522091,
+            "Name": "City_building_007",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        16.010492324829102,
+                        37.4932861328125,
+                        -1.5106878663573298e-06
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 1153862910,
+                    "Name": "City_building_007.nemesh",
+                    "Path": "Library\/Meshes\/1153862910.nemesh",
+                    "File": "1153862910.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 996351843,
+                        "Path": "Library\/Materials\/996351843.nemat",
+                        "File": "996351843.nemat"
+                    },
+                    "Texture": {
+                        "UID": 1142379756,
+                        "Name": "building_016_c.tga",
+                        "Path": "Library\/Textures\/1142379756.netex",
+                        "File": "1142379756.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 1403707975,
+            "ParentUID": 1703522091,
+            "Name": "City_building_008",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        40.979995727539063,
+                        18.270824432373047,
+                        -2.0522466002148576e-06
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0.70710676908493042,
+                        0.70710676908493042
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 107077455,
+                    "Name": "City_building_008.nemesh",
+                    "Path": "Library\/Meshes\/107077455.nemesh",
+                    "File": "107077455.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 2111028269,
+                        "Path": "Library\/Materials\/2111028269.nemat",
+                        "File": "2111028269.nemat"
+                    },
+                    "Texture": {
+                        "UID": 265799016,
+                        "Name": "building_025_c.tga",
+                        "Path": "Library\/Textures\/265799016.netex",
+                        "File": "265799016.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 1650431300,
+            "ParentUID": 1703522091,
+            "Name": "Line002",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -2.1597719192504883,
+                        1.8538382053375244,
+                        0
                     ],
                     "LocalRotation": [
                         0,
@@ -1748,33 +400,27 @@
                 },
                 {
                     "Type": 2,
-                    "UID": 1861066011,
-                    "Name": "City_building_039.nemesh",
-                    "Path": "Library\/Meshes\/1861066011.nemesh",
-                    "File": "1861066011.nemesh",
+                    "UID": 1612834193,
+                    "Name": "Line002.nemesh",
+                    "Path": "Library\/Meshes\/1612834193.nemesh",
+                    "File": "1612834193.nemesh",
                     "ShowWireframe": false,
                     "ShowBoundingBox": false
                 },
                 {
                     "Type": 3,
                     "Material": {
-                        "UID": 727211264,
-                        "Path": "Library\/Materials\/727211264.nemat",
-                        "File": "727211264.nemat"
-                    },
-                    "Texture": {
-                        "UID": 100949272,
-                        "Name": "Building_V01_C.png",
-                        "Path": "Library\/Textures\/100949272.netex",
-                        "File": "100949272.netex"
+                        "UID": 602086406,
+                        "Path": "Library\/Materials\/602086406.nemat",
+                        "File": "602086406.nemat"
                     }
                 }
             ]
         },
         {
-            "UID": 2106835265,
-            "ParentUID": 454890600,
-            "Name": "City_building_040",
+            "UID": 1822863533,
+            "ParentUID": 1703522091,
+            "Name": "Plane001",
             "IsActive": true,
             "IsStatic": false,
             "IsSceneRoot": false,
@@ -1783,14 +429,61 @@
                 {
                     "Type": 1,
                     "LocalPosition": [
-                        -34.679481506347656,
-                        -30.643888473510742,
-                        -9.3834518111179932e-07
+                        -0.02860260009765625,
+                        0.026032090187072754,
+                        0
                     ],
                     "LocalRotation": [
                         0,
                         0,
-                        -0.70710676908493042,
+                        0,
+                        1
+                    ],
+                    "LocalScale": [
+                        0.99663525819778442,
+                        0.97061645984649658,
+                        0.99663525819778442
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 993666467,
+                    "Name": "Plane001.nemesh",
+                    "Path": "Library\/Meshes\/993666467.nemesh",
+                    "File": "993666467.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 1466442335,
+                        "Path": "Library\/Materials\/1466442335.nemat",
+                        "File": "1466442335.nemat"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 1997926412,
+            "ParentUID": 1703522091,
+            "Name": "City_building_010",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        25.154010772705078,
+                        -39.153720855712891,
+                        8.5538641769744572e-07
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0.70710676908493042,
                         0.70710676908493042
                     ],
                     "LocalScale": [
@@ -1801,32 +494,41 @@
                 },
                 {
                     "Type": 2,
-                    "UID": 301441995,
-                    "Name": "City_building_040.nemesh",
-                    "Path": "Library\/Meshes\/301441995.nemesh",
-                    "File": "301441995.nemesh",
+                    "UID": 386907864,
+                    "Name": "City_building_010.nemesh",
+                    "Path": "Library\/Meshes\/386907864.nemesh",
+                    "File": "386907864.nemesh",
                     "ShowWireframe": false,
                     "ShowBoundingBox": false
                 },
                 {
                     "Type": 3,
                     "Material": {
-                        "UID": 1022436059,
-                        "Path": "Library\/Materials\/1022436059.nemat",
-                        "File": "1022436059.nemat"
+                        "UID": 1703250673,
+                        "Path": "Library\/Materials\/1703250673.nemat",
+                        "File": "1703250673.nemat"
                     },
                     "Texture": {
-                        "UID": 380416530,
-                        "Name": "Building_V01_C.png",
-                        "Path": "Library\/Textures\/380416530.netex",
-                        "File": "380416530.netex"
+                        "UID": 115601240,
+                        "Name": "building 01_c.tga",
+                        "Path": "Library\/Textures\/115601240.netex",
+                        "File": "115601240.netex"
                     }
+                },
+                {
+                    "Type": 2,
+                    "UID": 782270691,
+                    "Name": "City_building_010.nemesh",
+                    "Path": "Library\/Meshes\/782270691.nemesh",
+                    "File": "782270691.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
                 }
             ]
         },
         {
-            "UID": 2139750577,
-            "ParentUID": 454890600,
+            "UID": 26988048,
+            "ParentUID": 1703522091,
             "Name": "City_building_011",
             "IsActive": true,
             "IsStatic": false,
@@ -1854,26 +556,1324 @@
                 },
                 {
                     "Type": 2,
-                    "UID": 1760509759,
+                    "UID": 1703928221,
                     "Name": "City_building_011.nemesh",
-                    "Path": "Library\/Meshes\/1760509759.nemesh",
-                    "File": "1760509759.nemesh",
+                    "Path": "Library\/Meshes\/1703928221.nemesh",
+                    "File": "1703928221.nemesh",
                     "ShowWireframe": false,
                     "ShowBoundingBox": false
                 },
                 {
                     "Type": 3,
                     "Material": {
-                        "UID": 1049446471,
-                        "Path": "Library\/Materials\/1049446471.nemat",
-                        "File": "1049446471.nemat"
+                        "UID": 1770525428,
+                        "Path": "Library\/Materials\/1770525428.nemat",
+                        "File": "1770525428.nemat"
                     },
                     "Texture": {
-                        "UID": 1824119257,
+                        "UID": 189484988,
                         "Name": "building_016_c.tga",
-                        "Path": "Library\/Textures\/1824119257.netex",
-                        "File": "1824119257.netex"
+                        "Path": "Library\/Textures\/189484988.netex",
+                        "File": "189484988.netex"
                     }
+                }
+            ]
+        },
+        {
+            "UID": 1145842156,
+            "ParentUID": 1703522091,
+            "Name": "City_building_013",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -42.288055419921875,
+                        33.201576232910156,
+                        5.0146070407208754e-07
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0.70710676908493042,
+                        0.70710676908493042
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 2050674315,
+                    "Name": "City_building_013.nemesh",
+                    "Path": "Library\/Meshes\/2050674315.nemesh",
+                    "File": "2050674315.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 683471937,
+                        "Path": "Library\/Materials\/683471937.nemat",
+                        "File": "683471937.nemat"
+                    },
+                    "Texture": {
+                        "UID": 57075651,
+                        "Name": "building 06_ c.tga",
+                        "Path": "Library\/Textures\/57075651.netex",
+                        "File": "57075651.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 1558389609,
+            "ParentUID": 1703522091,
+            "Name": "City_building_014",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -19.439706802368164,
+                        32.061729431152344,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        1,
+                        -4.3711388286737929e-08
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 1716337778,
+                    "Name": "City_building_014.nemesh",
+                    "Path": "Library\/Meshes\/1716337778.nemesh",
+                    "File": "1716337778.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 243303971,
+                        "Path": "Library\/Materials\/243303971.nemat",
+                        "File": "243303971.nemat"
+                    },
+                    "Texture": {
+                        "UID": 1862241102,
+                        "Name": "building03_c.tga",
+                        "Path": "Library\/Textures\/1862241102.netex",
+                        "File": "1862241102.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 655510436,
+            "ParentUID": 1703522091,
+            "Name": "City_building_016",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        34.270423889160156,
+                        -41.972747802734375,
+                        8.5538641769744572e-07
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        1,
+                        -4.3711388286737929e-08
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 1270639834,
+                    "Name": "City_building_016.nemesh",
+                    "Path": "Library\/Meshes\/1270639834.nemesh",
+                    "File": "1270639834.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 546917486,
+                        "Path": "Library\/Materials\/546917486.nemat",
+                        "File": "546917486.nemat"
+                    },
+                    "Texture": {
+                        "UID": 2057231496,
+                        "Name": "building 01_c.tga",
+                        "Path": "Library\/Textures\/2057231496.netex",
+                        "File": "2057231496.netex"
+                    }
+                },
+                {
+                    "Type": 2,
+                    "UID": 787449382,
+                    "Name": "City_building_016.nemesh",
+                    "Path": "Library\/Meshes\/787449382.nemesh",
+                    "File": "787449382.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                }
+            ]
+        },
+        {
+            "UID": 142250301,
+            "ParentUID": 1703522091,
+            "Name": "City_building_017",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        44.260082244873047,
+                        -39.153720855712891,
+                        8.5538641769744572e-07
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0.70710676908493042,
+                        0.70710676908493042
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 1864365414,
+                    "Name": "City_building_017.nemesh",
+                    "Path": "Library\/Meshes\/1864365414.nemesh",
+                    "File": "1864365414.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 515676827,
+                        "Path": "Library\/Materials\/515676827.nemat",
+                        "File": "515676827.nemat"
+                    },
+                    "Texture": {
+                        "UID": 304762021,
+                        "Name": "building 01_c.tga",
+                        "Path": "Library\/Textures\/304762021.netex",
+                        "File": "304762021.netex"
+                    }
+                },
+                {
+                    "Type": 2,
+                    "UID": 1148029409,
+                    "Name": "City_building_017.nemesh",
+                    "Path": "Library\/Meshes\/1148029409.nemesh",
+                    "File": "1148029409.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                }
+            ]
+        },
+        {
+            "UID": 1824484179,
+            "ParentUID": 1703522091,
+            "Name": "City_building_022",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -20.831323623657227,
+                        -27.426488876342773,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        1,
+                        1.9470718370939721e-07
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 574222080,
+                    "Name": "City_building_022.nemesh",
+                    "Path": "Library\/Meshes\/574222080.nemesh",
+                    "File": "574222080.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 1208124586,
+                        "Path": "Library\/Materials\/1208124586.nemat",
+                        "File": "1208124586.nemat"
+                    },
+                    "Texture": {
+                        "UID": 349799857,
+                        "Name": "building05 _c.tga",
+                        "Path": "Library\/Textures\/349799857.netex",
+                        "File": "349799857.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 1171661277,
+            "ParentUID": 1703522091,
+            "Name": "City_building_023",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        42.130641937255859,
+                        37.4932861328125,
+                        -1.5106878663573298e-06
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 1162402130,
+                    "Name": "City_building_023.nemesh",
+                    "Path": "Library\/Meshes\/1162402130.nemesh",
+                    "File": "1162402130.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 368298914,
+                        "Path": "Library\/Materials\/368298914.nemat",
+                        "File": "368298914.nemat"
+                    },
+                    "Texture": {
+                        "UID": 383946414,
+                        "Name": "building_016_c.tga",
+                        "Path": "Library\/Textures\/383946414.netex",
+                        "File": "383946414.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 731482265,
+            "ParentUID": 1703522091,
+            "Name": "City_building_024",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -20.572771072387695,
+                        43.060829162597656,
+                        -0.069194458425045013
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        1,
+                        4.3711388286737929e-08
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 1577181338,
+                    "Name": "City_building_024.nemesh",
+                    "Path": "Library\/Meshes\/1577181338.nemesh",
+                    "File": "1577181338.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 990018408,
+                        "Path": "Library\/Materials\/990018408.nemat",
+                        "File": "990018408.nemat"
+                    },
+                    "Texture": {
+                        "UID": 436449256,
+                        "Name": "building_025_c.tga",
+                        "Path": "Library\/Textures\/436449256.netex",
+                        "File": "436449256.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 1051113406,
+            "ParentUID": 1703522091,
+            "Name": "City_building_026",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        31.51188850402832,
+                        -16.446016311645508,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        1,
+                        4.3711388286737929e-08
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 557617907,
+                    "Name": "City_building_026.nemesh",
+                    "Path": "Library\/Meshes\/557617907.nemesh",
+                    "File": "557617907.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 1756759795,
+                        "Path": "Library\/Materials\/1756759795.nemat",
+                        "File": "1756759795.nemat"
+                    },
+                    "Texture": {
+                        "UID": 1737540104,
+                        "Name": "building05 _c.tga",
+                        "Path": "Library\/Textures\/1737540104.netex",
+                        "File": "1737540104.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 766681746,
+            "ParentUID": 1703522091,
+            "Name": "City_building_028",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        13.38798999786377,
+                        -33.755039215087891,
+                        -9.3834518111179932e-07
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 981406172,
+                    "Name": "City_building_028.nemesh",
+                    "Path": "Library\/Meshes\/981406172.nemesh",
+                    "File": "981406172.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 1151412434,
+                        "Path": "Library\/Materials\/1151412434.nemat",
+                        "File": "1151412434.nemat"
+                    },
+                    "Texture": {
+                        "UID": 1215492298,
+                        "Name": "Building_V01_C.png",
+                        "Path": "Library\/Textures\/1215492298.netex",
+                        "File": "1215492298.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 795367530,
+            "ParentUID": 1703522091,
+            "Name": "Object010",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -2.5033531188964844,
+                        15.800846099853516,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 1789196696,
+                    "Name": "Object010.nemesh",
+                    "Path": "Library\/Meshes\/1789196696.nemesh",
+                    "File": "1789196696.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 644741927,
+                        "Path": "Library\/Materials\/644741927.nemat",
+                        "File": "644741927.nemat"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 80085675,
+            "ParentUID": 1703522091,
+            "Name": "City_building_030",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -42.807239532470703,
+                        -41.835563659667969,
+                        -9.3834518111179932e-07
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        -0.70710676908493042,
+                        0.70710676908493042
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 1493194164,
+                    "Name": "City_building_030.nemesh",
+                    "Path": "Library\/Meshes\/1493194164.nemesh",
+                    "File": "1493194164.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 985367322,
+                        "Path": "Library\/Materials\/985367322.nemat",
+                        "File": "985367322.nemat"
+                    },
+                    "Texture": {
+                        "UID": 893221547,
+                        "Name": "Building_V01_C.png",
+                        "Path": "Library\/Textures\/893221547.netex",
+                        "File": "893221547.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 433910018,
+            "ParentUID": 1703522091,
+            "Name": "City_building_031",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -34.679481506347656,
+                        -41.835563659667969,
+                        -9.3834518111179932e-07
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        -0.70710676908493042,
+                        0.70710676908493042
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 876562712,
+                    "Name": "City_building_031.nemesh",
+                    "Path": "Library\/Meshes\/876562712.nemesh",
+                    "File": "876562712.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 1933960451,
+                        "Path": "Library\/Materials\/1933960451.nemat",
+                        "File": "1933960451.nemat"
+                    },
+                    "Texture": {
+                        "UID": 1330859465,
+                        "Name": "Building_V01_C.png",
+                        "Path": "Library\/Textures\/1330859465.netex",
+                        "File": "1330859465.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 1613823350,
+            "ParentUID": 1703522091,
+            "Name": "City_building_032",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -29.478403091430664,
+                        21.01409912109375,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 1637783668,
+                    "Name": "City_building_032.nemesh",
+                    "Path": "Library\/Meshes\/1637783668.nemesh",
+                    "File": "1637783668.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 1219809201,
+                        "Path": "Library\/Materials\/1219809201.nemat",
+                        "File": "1219809201.nemat"
+                    },
+                    "Texture": {
+                        "UID": 2095562206,
+                        "Name": "building03_c.tga",
+                        "Path": "Library\/Textures\/2095562206.netex",
+                        "File": "2095562206.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 1263528387,
+            "ParentUID": 1703522091,
+            "Name": "City_building_033",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -32.361495971679688,
+                        42.37042236328125,
+                        5.0146070407208754e-07
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 1838418533,
+                    "Name": "City_building_033.nemesh",
+                    "Path": "Library\/Meshes\/1838418533.nemesh",
+                    "File": "1838418533.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 1414809301,
+                        "Path": "Library\/Materials\/1414809301.nemat",
+                        "File": "1414809301.nemat"
+                    },
+                    "Texture": {
+                        "UID": 1805907972,
+                        "Name": "building 06_ c.tga",
+                        "Path": "Library\/Textures\/1805907972.netex",
+                        "File": "1805907972.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 303515667,
+            "ParentUID": 1703522091,
+            "Name": "City_building_034",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        16.049516677856445,
+                        -16.696884155273438,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        -0.7071068286895752,
+                        0.70710670948028564
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 1947874310,
+                    "Name": "City_building_034.nemesh",
+                    "Path": "Library\/Meshes\/1947874310.nemesh",
+                    "File": "1947874310.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 744770802,
+                        "Path": "Library\/Materials\/744770802.nemat",
+                        "File": "744770802.nemat"
+                    },
+                    "Texture": {
+                        "UID": 695349227,
+                        "Name": "building05 _c.tga",
+                        "Path": "Library\/Textures\/695349227.netex",
+                        "File": "695349227.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 527418577,
+            "ParentUID": 1703522091,
+            "Name": "City_building_035",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        13.38798999786377,
+                        -40.802516937255859,
+                        -9.3834518111179932e-07
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 2066957213,
+                    "Name": "City_building_035.nemesh",
+                    "Path": "Library\/Meshes\/2066957213.nemesh",
+                    "File": "2066957213.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 1104696503,
+                        "Path": "Library\/Materials\/1104696503.nemat",
+                        "File": "1104696503.nemat"
+                    },
+                    "Texture": {
+                        "UID": 95901705,
+                        "Name": "Building_V01_C.png",
+                        "Path": "Library\/Textures\/95901705.netex",
+                        "File": "95901705.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 1069360591,
+            "ParentUID": 1703522091,
+            "Name": "City_building_036",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -31.216331481933594,
+                        33.201576232910156,
+                        5.0146070407208754e-07
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        -0.70710676908493042,
+                        0.70710676908493042
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 192785063,
+                    "Name": "City_building_036.nemesh",
+                    "Path": "Library\/Meshes\/192785063.nemesh",
+                    "File": "192785063.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 441821972,
+                        "Path": "Library\/Materials\/441821972.nemat",
+                        "File": "441821972.nemat"
+                    },
+                    "Texture": {
+                        "UID": 1679236631,
+                        "Name": "building 06_ c.tga",
+                        "Path": "Library\/Textures\/1679236631.netex",
+                        "File": "1679236631.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 1216185334,
+            "ParentUID": 1703522091,
+            "Name": "City_building_037",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -20.317693710327148,
+                        -16.163608551025391,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        1,
+                        1.9470718370939721e-07
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 811288209,
+                    "Name": "City_building_037.nemesh",
+                    "Path": "Library\/Meshes\/811288209.nemesh",
+                    "File": "811288209.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 1741437791,
+                        "Path": "Library\/Materials\/1741437791.nemat",
+                        "File": "1741437791.nemat"
+                    },
+                    "Texture": {
+                        "UID": 156188532,
+                        "Name": "building05 _c.tga",
+                        "Path": "Library\/Textures\/156188532.netex",
+                        "File": "156188532.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 71350248,
+            "ParentUID": 1703522091,
+            "Name": "City_building_038",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -41.649002075195313,
+                        -16.495393753051758,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        -0.7071068286895752,
+                        0.70710670948028564
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 694240532,
+                    "Name": "City_building_038.nemesh",
+                    "Path": "Library\/Meshes\/694240532.nemesh",
+                    "File": "694240532.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 1370240527,
+                        "Path": "Library\/Materials\/1370240527.nemat",
+                        "File": "1370240527.nemat"
+                    },
+                    "Texture": {
+                        "UID": 1997163233,
+                        "Name": "building05 _c.tga",
+                        "Path": "Library\/Textures\/1997163233.netex",
+                        "File": "1997163233.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 994149562,
+            "ParentUID": 1703522091,
+            "Name": "City_building_039",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -42.807239532470703,
+                        -30.643888473510742,
+                        -9.3834518111179932e-07
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        -0.70710676908493042,
+                        0.70710676908493042
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 54204312,
+                    "Name": "City_building_039.nemesh",
+                    "Path": "Library\/Meshes\/54204312.nemesh",
+                    "File": "54204312.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 1589115669,
+                        "Path": "Library\/Materials\/1589115669.nemat",
+                        "File": "1589115669.nemat"
+                    },
+                    "Texture": {
+                        "UID": 1759465303,
+                        "Name": "Building_V01_C.png",
+                        "Path": "Library\/Textures\/1759465303.netex",
+                        "File": "1759465303.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 1454369502,
+            "ParentUID": 1703522091,
+            "Name": "City_building_040",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -34.679481506347656,
+                        -30.643888473510742,
+                        -9.3834518111179932e-07
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        -0.70710676908493042,
+                        0.70710676908493042
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 1221205738,
+                    "Name": "City_building_040.nemesh",
+                    "Path": "Library\/Meshes\/1221205738.nemesh",
+                    "File": "1221205738.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 590736323,
+                        "Path": "Library\/Materials\/590736323.nemat",
+                        "File": "590736323.nemat"
+                    },
+                    "Texture": {
+                        "UID": 1194219886,
+                        "Name": "Building_V01_C.png",
+                        "Path": "Library\/Textures\/1194219886.netex",
+                        "File": "1194219886.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 153529206,
+            "ParentUID": 1703522091,
+            "Name": "City_building_041",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        30.695278167724609,
+                        21.612646102905273,
+                        2.1210729528320371e-07
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0.70710676908493042,
+                        0.70710676908493042
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                },
+                {
+                    "Type": 2,
+                    "UID": 906522143,
+                    "Name": "City_building_041.nemesh",
+                    "Path": "Library\/Meshes\/906522143.nemesh",
+                    "File": "906522143.nemesh",
+                    "ShowWireframe": false,
+                    "ShowBoundingBox": false
+                },
+                {
+                    "Type": 3,
+                    "Material": {
+                        "UID": 1960613746,
+                        "Path": "Library\/Materials\/1960613746.nemat",
+                        "File": "1960613746.nemat"
+                    },
+                    "Texture": {
+                        "UID": 1534039652,
+                        "Name": "Building_V02_C.png",
+                        "Path": "Library\/Textures\/1534039652.netex",
+                        "File": "1534039652.netex"
+                    }
+                }
+            ]
+        },
+        {
+            "UID": 247321737,
+            "ParentUID": 1663071646,
+            "Name": "Camera001",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -78.312431335449219,
+                        45.251216888427734,
+                        -97.031112670898438
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                }
+            ]
+        },
+        {
+            "UID": 2046623105,
+            "ParentUID": 1663071646,
+            "Name": "Camera001.Target",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -28.132621765136719,
+                        20.873329162597656,
+                        -35.064212799072266
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                }
+            ]
+        },
+        {
+            "UID": 927162328,
+            "ParentUID": 1663071646,
+            "Name": "Spot001",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        -66.721267700195313,
+                        141.93412780761719,
+                        6.2041376622801181e-06
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
+                }
+            ]
+        },
+        {
+            "UID": 322655269,
+            "ParentUID": 1663071646,
+            "Name": "Spot001.Target",
+            "IsActive": true,
+            "IsStatic": false,
+            "IsSceneRoot": false,
+            "ShowBoundingBoxes": false,
+            "Components": [
+                {
+                    "Type": 1,
+                    "LocalPosition": [
+                        28.890945434570313,
+                        -60.963882446289063,
+                        -2.6648158382158726e-06
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "LocalScale": [
+                        1,
+                        1,
+                        1
+                    ]
                 }
             ]
         }

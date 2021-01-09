@@ -1,5 +1,3 @@
-#include "JSONParser.h"
-
 #include "VariableTypedefs.h"
 #include "FileSystemDefinitions.h"
 
@@ -36,16 +34,6 @@ bool Resource::CleanUp()
 	library_file.clear();
 
 	return ret;
-}
-
-bool Resource::SaveMeta(ParsonNode& meta_root) const
-{
-
-}
-
-bool Resource::LoadMeta(const ParsonNode& meta_root)
-{
-
 }
 
 // --- RESOURCE METHODS ---

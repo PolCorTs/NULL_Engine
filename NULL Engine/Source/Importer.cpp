@@ -30,23 +30,23 @@ void Importer::ShutDownImporters()
 
 uint32 Importer::ImportFile(const char* path)
 {
-	uint32 resource_uid = 0;
+	uint32 r_uid = 0;
 
 	path = Utilities::GetValidPath(path);
 
 	if (path == nullptr)
 	{
 		LOG("[ERROR] Dropped file was not located inside the Assets directory!");
-		return 0;
+		return false;
 	}
 
 	if (Utilities::FileHasModelExtension(path))
 	{
-		resource_uid = Utilities::ImportScene(path);
+		r_uid = Utilities::ImportScene(path);
 	}
 	else if (Utilities::FileHasTextureExtension(path))
 	{
-		resource_uid = Utilities::ImportTexture(path);
+		r_uid = Utilities::ImportTexture(path);
 	}
 	else
 	{
@@ -54,7 +54,7 @@ uint32 Importer::ImportFile(const char* path)
 		return 0;
 	}
 
-	return resource_uid;
+	return r_uid;
 }
 
 uint32 Importer::Utilities::ImportScene(const char* path)

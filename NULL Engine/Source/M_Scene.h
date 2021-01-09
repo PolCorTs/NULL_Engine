@@ -9,7 +9,6 @@
 
 class ParsonNode;
 class Primitive;
-class R_Model;
 class R_Texture;
 class GameObject;
 class C_Camera;
@@ -38,8 +37,6 @@ public:																														// --- GAME OBJECTS METHODS ---
 	GameObject*		CreateGameObject						(const char* name = nullptr, GameObject* parent = nullptr);		// 
 	void			DeleteGameObject						(GameObject* game_object, uint index = -1);						// 
 	
-	void			GenerateGameObjectsFromModel			(uint32 model_UID);
-
 public:																														// --- MASTER ROOT & SCENE ROOT METHODS ---
 	void			CreateMasterRoot						();																// 
 	void			DeleteMasterRoot						();																// 

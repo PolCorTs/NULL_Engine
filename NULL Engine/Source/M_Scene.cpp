@@ -4,8 +4,6 @@
 #include "JSONParser.h"
 #include "Random.h"
 
-#include "VariableTypedefs.h"
-
 #include "Application.h"														// ATTENTION: Globals.h already included in Module.h
 #include "M_Window.h"
 #include "M_Camera3D.h"
@@ -512,32 +510,26 @@ std::vector<GameObject*>* M_Scene::GetGameObjects()
 	return &game_objects;
 }
 
-bool M_Scene::ApplyNewTextureToSelectedGameObject(const uint32& UID)
+bool M_Scene::ApplyNewTextureToSelectedGameObject(R_Texture* r_texture)
 {
-	BROFILER_CATEGORY("ApplyNewTextureToSelectedGameObject()", Profiler::Color::Magenta);
+	BROFILER_CATEGORY("ApplyNewTextureToSelectedGameObject()", Profiler::Color::Magenta)
+	
+	if (r_texture == nullptr)
+	{
+		LOG("[ERROR] Could not add the texture to the selected game object! Error: R_Texture* was nullptr");
+		return false;
+	}
+
+	if (r_texture->GetTextureID() == 0)
+	{
+		LOG("[ERROR] Could not add the texture to the selected game object! Error: R_Texture* Tex ID was 0");
+		RELEASE(r_texture);
+		return false;
+	}
 
 	if (selected_game_object == nullptr)
 	{
-		LOG("[ERROR] Could not add the texture to the selected game object! Error: No game object was being selected.");
-		return false;
-	}
-	if (UID == 0)
-	{
-		LOG("[ERROR] Could not add the texture to the selected game object! Error: Given Resource UID was 0.");
-		return false;
-	}
-
-	R_Texture* r_texture = (R_Texture*)App->resource_manager->RequestResource(UID);
-
-	if (r_texture == nullptr)
-	{
-		LOG("[ERROR] Could not add the texture to the selected game object! Error: R_Texture* was nullptr.");
-		return false;
-	}
-	if (r_texture->GetTextureID() == 0)
-	{
-		LOG("[ERROR] Could not add the texture to the selected game object! Error: R_Texture* Texture ID was 0.");
-		App->resource_manager->DeallocateResource(r_texture);
+		LOG("[ERROR] No game object was being selected! Try again after selecting one from the hierarchy.");
 		return false;
 	}
 

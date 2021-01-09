@@ -16,8 +16,6 @@ class C_Camera;
 
 struct ModelNode;
 
-typedef unsigned __int32 uint32;
-
 class M_Scene : public Module
 {
 public:
@@ -65,7 +63,7 @@ public:																														// --- SELECTED GAME OBJECT METHODS ---
 	void			SetSelectedGameObject					(GameObject* game_object);										// 
 	void			DeleteSelectedGameObject				();																// 
 
-	bool			ApplyNewTextureToSelectedGameObject		(const uint32& UID);											//
+	bool			ApplyNewTextureToSelectedGameObject		(R_Texture* path);												//
 
 public:																														// --- SELECT THROUGH RAYCAST
 	void			SelectGameObjectThroughRaycast			(const LineSegment& ray);

@@ -12,7 +12,7 @@ namespace Importer
 		void	Init	();
 		void	CleanUp	();
 		
-		bool	Import	(const char* buffer, uint size, R_Texture* r_texture);
+		uint	Import	(const char* buffer, uint size, R_Texture* r_texture);
 		uint	Save	(const R_Texture* r_texture, char** buffer);
 		bool	Load	(const char* buffer, const uint size, R_Texture* r_texture);
 

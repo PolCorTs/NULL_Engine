@@ -191,7 +191,6 @@ void Importer::Scenes::Utilities::ImportMesh(const char* node_name, const aiMesh
 	
 	model_node.mesh_uid = r_mesh->GetUID();
 	App->resource_manager->SaveResourceToLibrary(r_mesh);
-	App->resource_manager->DeallocateResource(r_mesh);
 }
 
 void Importer::Scenes::Utilities::ImportMaterial(const char* node_name, const aiMaterial* ai_material, R_Model* r_model, ModelNode& model_node)
@@ -208,11 +207,9 @@ void Importer::Scenes::Utilities::ImportMaterial(const char* node_name, const ai
 	Importer::Materials::Import(ai_material, r_material);
 	
 	model_node.material_uid = r_material->GetUID();																				//
+	App->resource_manager->SaveResourceToLibrary(r_material);
 
 	Utilities::ImportTexture(r_material->materials, model_node);
-	
-	App->resource_manager->SaveResourceToLibrary(r_material);
-	App->resource_manager->DeallocateResource(r_material);
 }
 
 void Importer::Scenes::Utilities::ImportTexture(const std::vector<MaterialData>& materials, ModelNode& model_node)
@@ -252,12 +249,11 @@ void Importer::Scenes::Utilities::ImportTexture(const std::vector<MaterialData>&
 				model_node.texture_name = r_texture->GetAssetsFile();
 			}
 
+			App->resource_manager->SaveResourceToLibrary(r_texture);
+
 			loaded_textures.emplace(tex_path, r_texture->GetUID());
 
-			App->resource_manager->SaveResourceToLibrary(r_texture);
-			App->resource_manager->DeallocateResource(r_texture);
-
-			RELEASE_ARRAY(buffer);
+			//RELEASE_ARRAY(buffer);																					// TMP Commented. MMGR breaks here
 		}
 		else
 		{

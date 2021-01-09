@@ -19,8 +19,6 @@
 
 #include "GameObject.h"
 
-#include "MemoryManager.h"
-
 GameObject::GameObject() :
 uid					(Random::LCG::GetRandomUint()),
 parent_uid			(0),

@@ -19,8 +19,6 @@
 
 #include "Application.h"
 
-#include "MemoryManager.h"
-
 Application::Application() :
 quit			(false),
 debug			(false), 

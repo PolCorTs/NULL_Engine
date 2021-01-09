@@ -4,6 +4,7 @@
 class R_Texture;
 
 typedef unsigned int		uint;
+typedef unsigned __int64	uint64;
 
 namespace Importer
 {
@@ -13,7 +14,7 @@ namespace Importer
 		void	CleanUp	();
 		
 		uint	Import	(const char* buffer, uint size, R_Texture* r_texture);
-		uint	Save	(const R_Texture* r_texture, char** buffer);
+		uint64	Save	(const R_Texture* r_texture, char** buffer);
 		bool	Load	(const char* buffer, const uint size, R_Texture* r_texture);
 
 		namespace Utilities

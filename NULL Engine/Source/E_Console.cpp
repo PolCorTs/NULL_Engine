@@ -109,29 +109,25 @@ void E_Console::ConsoleOutput()
 		{
 			text_colour = { 1.0f, 0.33f, 0.33f, 1.0f };							// [ERROR] logs will be red.
 		}
-		else if (strstr(logs[i], "[WARNING]") != nullptr)
+
+		if (strstr(logs[i], "[WARNING]") != nullptr)
 		{
 			text_colour = { 1.0f, 1.0f, 0.33f, 1.0f };							// [WARNING] logs will be yellow.
 		}
-		else if (strstr(logs[i], "[STATUS]") != nullptr)
+
+		if (strstr(logs[i], "[STATUS]") != nullptr)
 		{
 			text_colour = { 1.0f, 0.33f, 1.0f, 1.0f };
 		}
-		else if (strstr(logs[i], "[FILE_SYSTEM]") != nullptr)
-		{
-			text_colour = { 0.33f, 0.33f, 1.0f, 1.0f };
-		}
-		else if (strstr(logs[i], "[IMPORTER]") != nullptr)
+
+		if (strstr(logs[i], "[IMPORTER]") != nullptr)
 		{
 			text_colour = { 0.33f, 1.0f, 1.0f, 1.0f };
 		}
-		else if (strstr(logs[i], "[SCENE]") != nullptr)
+
+		if (strstr(logs[i], "[SCENE]") != nullptr)
 		{
 			text_colour = { 0.33f, 1.0f, 0.33f, 1.0f };
-		}
-		else
-		{
-			text_colour = { 1.0f, 1.0f, 1.0f, 1.0f };
 		}
 
 		ImGui::PushStyleColor(ImGuiCol_Text, text_colour);

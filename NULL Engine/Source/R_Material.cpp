@@ -50,7 +50,7 @@ bool R_Material::LoadMeta(const ParsonNode& meta_root)
 }
 
 // --- MATERIAL METHODS ---
-MaterialData::MaterialData() :
+Material::Material() :
 type				(TEXTURE_TYPE::NONE),
 texture_uid			(0),
 texture_assets_path	("[NONE]")
@@ -58,7 +58,7 @@ texture_assets_path	("[NONE]")
 
 }
 
-MaterialData::MaterialData(TEXTURE_TYPE type, uint texture_uid, std::string texture_assets_path) :
+Material::Material(TEXTURE_TYPE type, uint texture_uid, std::string texture_assets_path) :
 type				(type),
 texture_uid			(texture_uid),
 texture_assets_path	(texture_assets_path)
@@ -66,7 +66,7 @@ texture_assets_path	(texture_assets_path)
 
 }
 
-void MaterialData::CleanUp()
+void Material::CleanUp()
 {
 	texture_assets_path.clear();
 }

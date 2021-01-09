@@ -27,10 +27,10 @@ enum class TEXTURE_TYPE									// The enum values are set according to the valu
 	UNKNOWN			= 0xC								// 0xC = aiTextureType_UNKNOWN		--> Tex. ref. that does not match any of the above. Imported but excluded from postprocessing.
 };
 
-struct MaterialData
+struct Material
 {
-	MaterialData();
-	MaterialData(TEXTURE_TYPE type, uint texture_uid, std::string texture_assets_path);
+	Material();
+	Material(TEXTURE_TYPE type, uint texture_uid, std::string texture_assets_path);
 	
 	void CleanUp();
 	
@@ -51,7 +51,7 @@ public:
 	bool LoadMeta(const ParsonNode& meta_root) override;
 
 public:
-	std::vector<MaterialData>	materials;									// In the end the amount of materials that will be used is "constant". It could be an array as mat[7] = { 0, 0,... };
+	std::vector<Material>	materials;									// In the end the amount of materials that will be used is "constant". It could be an array as mat[7] = { 0, 0,... };
 	Color					diffuse_color;
 
 private:

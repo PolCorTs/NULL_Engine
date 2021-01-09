@@ -72,9 +72,9 @@ uint ParsonNode::SerializeToBuffer(char** buffer)
 	return size;
 }
 
-uint ParsonNode::SerializeToFile(const char* path, char** buffer)
+uint64 ParsonNode::SerializeToFile(const char* path, char** buffer)
 {
-	uint written = 0;
+	uint64 written = 0;
 	
 	uint size = SerializeToBuffer(buffer);
 	if (size == 0)
@@ -496,5 +496,5 @@ bool ParsonArray::HasValueOfTypeAtIndex(const uint& index, JSON_Value_Type value
 
 bool ParsonArray::ArrayIsValid() const
 {
-	return (json_array != NULL);
+	return (json_array == NULL);
 }

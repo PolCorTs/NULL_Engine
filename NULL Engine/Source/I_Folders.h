@@ -3,14 +3,14 @@
 
 class R_Folder;
 
-typedef unsigned int uint;
+typedef unsigned __int64 uint64;
 
 namespace Importer
 {
 	namespace Folders
 	{
-		uint Save(const R_Folder* r_folder, char** buffer);
-		bool Load(const char* buffer, R_Folder* r_folder);
+		uint64	Save(const R_Folder* r_folder, char** buffer);
+		void	Load(const char* buffer, R_Folder* r_folder);
 	}
 }
 

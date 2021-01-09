@@ -44,8 +44,9 @@ public:																												// --- IMPORT FILE METHODS ---
 	void			SetResourceLibraryPathAndFile	(Resource* resource);
 
 public:																												// --- META FILE METHODS ---
-	bool			SaveMetaFile					(Resource* resource) const;										//
-	ParsonNode		LoadMetaFile					(const char* assets_path, char** buffer);						// Passing the buffer so it can be safely RELEASED after calling it.
+	bool			SaveMetaFile					(Resource* resource) const;
+	//ParsonNode		LoadMetaFile					(const char* assets_path);
+	ParsonNode		LoadMetaFile					(const char* assets_path, char** buffer);
 	
 	bool			MetaFileIsValid					(const char* assets_path);
 	bool			MetaFileIsValid					(ParsonNode& meta_root);

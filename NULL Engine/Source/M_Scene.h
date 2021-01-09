@@ -14,8 +14,6 @@ class R_Texture;
 class GameObject;
 class C_Camera;
 
-struct ModelNode;
-
 class M_Scene : public Module
 {
 public:
@@ -40,8 +38,7 @@ public:																														// --- GAME OBJECTS METHODS ---
 	GameObject*		CreateGameObject						(const char* name = nullptr, GameObject* parent = nullptr);		// 
 	void			DeleteGameObject						(GameObject* game_object, uint index = -1);						// 
 	
-	void			GenerateGameObjectsFromModel			(const uint32& model_UID);
-	void			CreateComponentsFromModelNode			(const ModelNode& model_node, GameObject* game_object);
+	void			GenerateGameObjectsFromModel			(uint32 model_UID);
 
 public:																														// --- MASTER ROOT & SCENE ROOT METHODS ---
 	void			CreateMasterRoot						();																// 

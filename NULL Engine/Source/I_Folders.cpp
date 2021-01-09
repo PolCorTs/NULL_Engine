@@ -43,6 +43,9 @@ uint Importer::Folders::Save(const R_Folder* r_folder, char** buffer)
 		LOG("%s! Error: File System could not Write File!", error_string.c_str());
 	}
 
+	path.clear();
+	error_string.clear();
+
 	return written;
 }
 
@@ -84,6 +87,8 @@ bool Importer::Folders::Load(const char* buffer, R_Folder* r_folder)
 	}
 
 	LOG("[STATUS] Importer: Successfully Loaded Folder { %s } from Library! UID: %lu", r_folder->GetAssetsPath(), r_folder->GetUID());
+
+	error_string.clear();
 
 	return ret;
 }

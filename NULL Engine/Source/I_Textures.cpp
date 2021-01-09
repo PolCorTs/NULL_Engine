@@ -78,6 +78,8 @@ bool Importer::Textures::Import(const char* buffer, uint size, R_Texture* r_text
 		return false;
 	}
 
+	error_string.clear();
+
 	return success;
 }
 
@@ -130,6 +132,12 @@ uint Importer::Textures::Save(const R_Texture* r_texture, char** buffer)
 	{
 		LOG("%s! ilSaveL() Error: %s", error_string.c_str(), iluErrorString(ilGetError()));
 	}
+
+	directory.clear();
+	file.clear();
+	full_path.clear();
+
+	error_string.clear();
 
 	return written;
 }
@@ -224,6 +232,8 @@ bool Importer::Textures::Load(const char* buffer, const uint size, R_Texture* r_
 	}
 
 	ilDeleteImages(1, &il_image);
+
+	error_string.clear();
 
 	return ret;
 }

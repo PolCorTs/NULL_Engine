@@ -74,11 +74,6 @@ private:
 	float FPS_data[MAX_HISTOGRAM_SIZE];
 	float ms_data[MAX_HISTOGRAM_SIZE];
 
-	uint peak_FPS;
-	uint min_FPS;
-	uint peak_ms;
-	uint min_ms;
-
 	std::vector<char*> input_logs;
 	bool input_log_scroll_to_bottom;
 };

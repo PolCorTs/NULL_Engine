@@ -141,12 +141,10 @@ void HardwareInfo::UpdateInfo()
 
 	if (getGraphicsDeviceInfo(nullptr, nullptr, nullptr, &vram_budget, &vram_usage, &vram_available, &vram_reserved))
 	{
-		float to_mb				= (1024.0f * 1024.0f * 1024.0f);
-
-		GPU.vram_mb_budget		= float(vram_budget)	/ to_mb;
-		GPU.vram_mb_usage		= float(vram_usage)		/ to_mb;
-		GPU.vram_mb_available	= float(vram_available) / to_mb;
-		GPU.vram_mb_reserved	= float(vram_reserved)	/ to_mb;
+		GPU.vram_mb_budget		= float(vram_budget)	/ 1073741824.0f;
+		GPU.vram_mb_usage		= float(vram_usage)		/ (1024.0f * 1024.0f * 1024.0f);
+		GPU.vram_mb_available	= float(vram_available) / (1024.0f * 1024.0f * 1024.0f);
+		GPU.vram_mb_reserved	= float(vram_reserved)	/ (1024.0f * 1024.0f * 1024.0f);
 	}
 }
 

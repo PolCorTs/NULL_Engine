@@ -113,6 +113,7 @@ void E_Project::DrawDirectoriesTree(const char* root_directory, const char* exte
 		if (ImGui::TreeNodeEx(path.c_str(), 0, "%s/", directories[i].c_str()))
 		{
 			DrawDirectoriesTree(path.c_str(), extension_to_filter);
+			path.clear();
 			ImGui::TreePop();
 		}
 	}
@@ -134,4 +135,5 @@ void E_Project::DrawDirectoriesTree(const char* root_directory, const char* exte
 
 	directories.clear();
 	files.clear();
+	root_dir.clear();
 }

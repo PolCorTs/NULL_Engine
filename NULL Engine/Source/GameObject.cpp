@@ -597,6 +597,8 @@ bool GameObject::DeleteComponent(Component* component_to_delete)
 
 	LOG("[STATUS] Deleted Component %s of Game Object %s", component_name.c_str(), name.c_str());
 
+	component_name.clear();
+
 	return false;
 }
 

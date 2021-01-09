@@ -1,8 +1,6 @@
 #ifndef __IMPORT_SETTINGS_H__
 #define __IMPORT_SETTINGS_H__
 
-class ParsonNode;
-
 enum class AXIS_ORIENTATION
 {
 	X_UP,
@@ -10,16 +8,10 @@ enum class AXIS_ORIENTATION
 	Z_UP
 };
 
-class ImportSettings													// TMP. Brought from Importer.h
+struct ImportSettings													// TMP. Brought from Importer.h
 {
-public:
 	ImportSettings();
-	 virtual ~ImportSettings();
 
-	virtual bool SaveImportSettings(ParsonNode& settings) const;
-	virtual bool LoadImportSettings(const ParsonNode& settings);
-
-public:
 	float				global_scale;
 	AXIS_ORIENTATION	axis;
 	bool				ignore_cameras;
@@ -32,9 +24,6 @@ public:
 	int					filter;
 	bool				generate_mipmaps;
 	bool				anisotropy;
-
-private:
-
 };
 
 #endif // !__IMPORT_SETTINGS_H__

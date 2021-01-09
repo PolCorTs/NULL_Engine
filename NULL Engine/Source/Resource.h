@@ -15,11 +15,7 @@ enum class RESOURCE_TYPE
 	NONE,
 	MESH,
 	MATERIAL,
-	TEXTURE,
-	MODEL,
-	FOLDER,
-	ANIMATION,
-	SCENE,
+	TEXTURE
 };
 
 class Resource

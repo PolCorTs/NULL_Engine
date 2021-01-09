@@ -1,5 +1,3 @@
-#include "JSONParser.h"
-
 #include "ImportSettings.h"
 
 ImportSettings::ImportSettings()
@@ -16,27 +14,4 @@ ImportSettings::ImportSettings()
 	filter				= 0x2601;										// 0x2601 = GL_LINEAR. OpenGL Flag.
 	generate_mipmaps	= true;
 	anisotropy			= true;
-}
-
-ImportSettings::~ImportSettings()
-{
-
-}
-
-bool ImportSettings::SaveImportSettings(ParsonNode& settings) const
-{
-	bool ret = true;
-
-
-
-	return ret;
-}
-
-bool ImportSettings::LoadImportSettings(const ParsonNode& settings)
-{
-	bool ret = true;
-
-
-
-	return ret;
 }

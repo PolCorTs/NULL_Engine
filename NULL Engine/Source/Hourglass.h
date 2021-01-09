@@ -13,7 +13,6 @@ struct Hourglass																	// This struct is called Hourglass instead of C
 
 	//void Update();
 	void Update(uint ms);
-	void ResetClock();
 
 	std::string GetTimeAsString();
 

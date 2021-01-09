@@ -159,8 +159,7 @@ bool Application::Init()
 		++item;
 	}
 
-	Time::Real::InitRealClock();
-	Time::Game::SetTimeScale(1.0f);
+	Time::Real::InitRealTimers();
 
 	//PERF_TIMER_PEEK(perf_timer);
 
@@ -243,12 +242,6 @@ bool Application::CleanUp()
 void Application::PrepareUpdate()
 {
 	Time::Real::Update();
-
-	if (play || step)
-	{
-		Time::Game::Update();
-		step = false;
-	}
 }
 
 UPDATE_STATUS Application::PreUpdate()
@@ -261,7 +254,8 @@ UPDATE_STATUS Application::PreUpdate()
 	{
 		if ((*item)->IsActive())
 		{
-			ret = (*item)->PreUpdate(Time::Game::GetDT());
+			//ret = (*item)->PreUpdate(dt);
+			ret = (*item)->PreUpdate(Time::Real::GetDT());
 		}
 
 		++item;
@@ -287,7 +281,15 @@ UPDATE_STATUS Application::DoUpdate()
 	{
 		if ((*item)->IsActive())
 		{
-			ret = (*item)->Update(Time::Game::GetDT());
+			if (!pause)
+			{
+				//ret = (*item)->Update(dt);
+				ret = (*item)->Update(Time::Real::GetDT());
+			}
+			else
+			{
+				ret = (*item)->Update(0.0f);
+			}
 		}
 
 		++item;
@@ -314,7 +316,7 @@ UPDATE_STATUS Application::PostUpdate()
 		if ((*item)->IsActive())
 		{
 			//ret = (*item)->PostUpdate(dt);
-			ret = (*item)->PostUpdate(Time::Game::GetDT());
+			ret = (*item)->PostUpdate(Time::Real::GetDT());
 		}
 		
 		++item;
@@ -344,14 +346,23 @@ void Application::FinishUpdate()
 		want_to_save = false;
 	}
 
+	// ------------ Framerate Calculations ------------
 	if (frames_are_capped)
 	{
 		Time::Real::DelayUntilFrameCap(frame_cap);
 	}
+	
+	FrameData frame_data	= Time::Real::GetFrameData();
+	Hourglass clock			= Time::Real::GetClock();
 
 	if (display_framerate_data)
 	{
-		App->window->SetTitle("Go to the Time Management header in the Configuration Panel to see all the Framerate Data.");
+		static char framerate_data[256];
+
+		sprintf_s(framerate_data, 256, "Av.FPS: %.2f / Last Frame Ms: %02u / Last sec frames: %i / Last dt: %.3f / Time since startup: %dh %dm %.3fs / Frame Count: %llu",
+			frame_data.avg_fps, frame_data.ms_last_frame, frame_data.frames_last_second, frame_data.dt, clock.hours, clock.minutes, clock.seconds, frame_data.frame_count);
+
+		App->window->SetTitle(framerate_data);
 	}
 	else
 	{
@@ -359,7 +370,7 @@ void Application::FinishUpdate()
 	}
 
 	// Editor: Configuration Frame Data Histograms
-	UpdateFrameData(Time::Real::GetFramesLastSecond(), Time::Real::GetMsLastFrame());
+	UpdateFrameData(frame_data.frames_last_second, frame_data.ms_last_frame);
 }
 // ---------------------------------------------
 
@@ -536,13 +547,3 @@ HardwareInfo Application::GetHardwareInfo() const
 {
 	return hardware_info;
 }
-
-/*if (display_framerate_data)
-{
-	static char framerate_data[256];
-
-	sprintf_s(framerate_data, 256, "Av.FPS: %.2f / Last Frame Ms: %02u / Last sec frames: %i / Last dt: %.3f / Time since startup: %dh %dm %.3fs / Frame Count: %llu",
-		frame_data.avg_fps, frame_data.ms_last_frame, frame_data.frames_last_second, frame_data.dt, clock.hours, clock.minutes, clock.seconds, frame_data.frame_count);
-
-	App->window->SetTitle(framerate_data);
-}*/

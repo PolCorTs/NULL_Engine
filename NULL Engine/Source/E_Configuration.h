@@ -32,8 +32,7 @@ private:
 	bool TexturesMenu					();								// 
 	bool AudioMenu						();								// 
 	bool PhysicsMenu					();								// 
-	bool SystemInfoMenu					();								// Menu that will display the hardware state of the system that is running the application.
-	bool TimeManagementMenu				();								//
+	bool HardwareMenu					();								// Menu that will display the hardware state of the system that is running the application.
 	bool ImGuiEditorMenu				();								// Menu that will allow to dynamically change the style of the ImGui UI and export the current style.
 
 	// ------- MENU METHODS -------

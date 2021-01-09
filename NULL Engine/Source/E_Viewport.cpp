@@ -34,7 +34,7 @@ E_Viewport::~E_Viewport()
 bool E_Viewport::Draw(ImGuiIO& io)
 {
 	bool ret = true;
-	
+
 	DrawScene();
 	
 	DrawGame();
@@ -131,11 +131,7 @@ void E_Viewport::DrawScene()
 		game_focused	= false;
 	}
 	
-	if (scene_focused)
-	{
-		SetIsHovered();
-	}
-
+	SetIsHovered();
 	AdaptTextureToWindowSize();
 
 	DrawSceneTexture();
@@ -158,11 +154,7 @@ void E_Viewport::DrawGame()
 		scene_focused	= false;
 	}
 
-	if (game_focused)
-	{
-		SetIsHovered();
-	}
-
+	SetIsHovered();
 	AdaptTextureToWindowSize();
 
 	DrawSceneTexture();

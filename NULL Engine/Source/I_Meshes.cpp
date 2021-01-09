@@ -17,7 +17,7 @@
 
 #include "MemoryManager.h"
 
-#include "Timer.h"
+#include "T_Timer.h"
 
 #pragma comment (lib, "Source/Dependencies/Assimp/libx86/assimp.lib")
 

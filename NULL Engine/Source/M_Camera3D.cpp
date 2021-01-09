@@ -1,5 +1,3 @@
-#include "Time.h"
-
 #include "Application.h"															// ATTENTION: Globals.h already included in Application.h.
 #include "M_Window.h"
 #include "M_Input.h"
@@ -99,7 +97,7 @@ bool M_Camera3D::SaveConfiguration(ParsonNode& root) const
 // -----------------------------------------------------------------
 UPDATE_STATUS M_Camera3D::Update(float dt)
 {
-	if (App->editor->ViewportIsHovered())
+	if (App->editor->SceneIsHovered())
 	{	
 		if (!App->editor->HoveringGuizmo())
 		{
@@ -132,7 +130,7 @@ UPDATE_STATUS M_Camera3D::Update(float dt)
 					reference = float3::zero;
 				}
 				
-				Orbit();
+				RotateAroundReference();
 			}
 		}
 
@@ -241,12 +239,12 @@ void M_Camera3D::SetMasterCameraAsCurrentCamera()
 }
 
 // -----------------------------------------------------------------
-void M_Camera3D::PointAt(const float3& position, const float3& target, bool orbit)
+void M_Camera3D::PointAt(const float3& position, const float3& target, bool RotateAroundReference)
 {
 	current_camera->PointAt(position, target);										
 	reference = target;
 
-	if(!orbit)
+	if(!RotateAroundReference)
 	{
 		reference = position;
 
@@ -287,11 +285,11 @@ void M_Camera3D::WASDMovement()
 {
 	float3 new_position		= float3::zero;
 	Frustum frustum			= current_camera->GetFrustum();
-	float mov_speed			= movement_speed * Time::Real::GetDT();
+	float mov_speed			= movement_speed * App->GetUnpausableDt();
 	
 	if (App->input->GetKey(SDL_SCANCODE_LSHIFT) == KEY_STATE::KEY_REPEAT)								// --- CAMERA MOVEMEMENT BOOST
 	{																									// 
-		mov_speed = movement_speed * 2 * Time::Real::GetDT();											// 
+		mov_speed = movement_speed * 2 * App->GetUnpausableDt();										// 
 	}																									// ---------------------------
 
 
@@ -385,11 +383,11 @@ void M_Camera3D::FreeLookAround()
 	}*/
 }
 
-void M_Camera3D::Orbit()								// Almost identical to FreeLookAround(), but instead of only modifying XYZ, the position of the camera is also modified.
+void M_Camera3D::RotateAroundReference()								// Almost identical to FreeLookAround(), but instead of only modifying XYZ, the position of the camera is also modified.
 {	
 	Frustum frustum			= current_camera->GetFrustum();
 	float2 mouse_motion		= App->editor->GetWorldMouseMotionThroughEditor();
-	float sensitivity		= rotation_speed * Time::Real::GetDT();
+	float sensitivity		= rotation_speed * App->GetDt();
 
 	float3 new_Z = frustum.Pos() - reference;
 
@@ -421,12 +419,12 @@ void M_Camera3D::PanCamera()
 
 	if (mouse_motion.x != 0)
 	{
-		new_X = -mouse_motion.x * frustum.WorldRight() * Time::Real::GetDT();
+		new_X = -mouse_motion.x * frustum.WorldRight() * App->GetDt();
 	}
 
 	if (mouse_motion.y != 0)
 	{
-		new_Y = mouse_motion.y * frustum.Up() * Time::Real::GetDT();
+		new_Y = mouse_motion.y * frustum.Up() * App->GetDt();
 	}
 
 	new_position = new_X + new_Y;
@@ -437,7 +435,7 @@ void M_Camera3D::PanCamera()
 void M_Camera3D::Zoom()
 {	
 	Frustum frustum		= current_camera->GetFrustum();
-	float3 new_Z		= frustum.Front() * (float)App->input->GetMouseZ() * zoom_speed * Time::Real::GetDT();
+	float3 new_Z		= frustum.Front() * (float)App->input->GetMouseZ() * zoom_speed * App->GetDt();
 
 	Move(new_Z);
 }

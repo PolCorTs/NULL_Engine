@@ -90,9 +90,8 @@ UPDATE_STATUS M_Scene::Update(float dt)
 		HandleDebugInput();
 	}
 
-	std::vector<MeshRenderer>		mesh_renderers;
-	std::vector<CuboidRenderer>		cuboid_renderers;
-	std::vector<SkeletonRenderer>	skeleton_renderers;
+	std::vector<MeshRenderer>	mesh_renderers;
+	std::vector<CuboidRenderer> cuboid_renderers;
 
 	// --- Sort GameObjects by Z-Buffer value
 
@@ -110,13 +109,13 @@ UPDATE_STATUS M_Scene::Update(float dt)
 
 			if (GameObjectIsInsideCullingCamera(game_objects[i]) || game_objects[i] == culling_camera->GetOwner())
 			{
-				game_objects[i]->GetRenderers(mesh_renderers, cuboid_renderers, skeleton_renderers);
+				game_objects[i]->GetRenderers(mesh_renderers, cuboid_renderers);
 			}
 		}
 	}
 
 	// --- Send Batches to Renderer
-	App->renderer->AddRenderersBatch(mesh_renderers, cuboid_renderers, skeleton_renderers);
+	App->renderer->AddRenderersBatch(mesh_renderers, cuboid_renderers);
 
 	mesh_renderers.clear();
 	cuboid_renderers.clear();

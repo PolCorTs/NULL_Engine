@@ -30,7 +30,7 @@ struct BoneLink
 	BoneLink();
 	BoneLink(const Channel& channel, GameObject* game_object);
 	
-	Channel channel;
+	const Channel channel;
 	GameObject* game_object;
 };
 
@@ -61,53 +61,42 @@ public:
 	static inline COMPONENT_TYPE GetType() { return COMPONENT_TYPE::ANIMATOR; }
 
 public:
+	bool				StepToPrevKeyframe			();
+	bool				StepToNextKeyframe			();
+	bool				RefreshBoneDisplay			();
+
 	void				AddAnimation				(R_Animation* r_animation);
-	void				AddClip						(const AnimatorClip& clip);
-	void				PlayClip					(std::string clip_name, uint blend_frames);
 	
 	bool				Play						();
 	bool				Pause						();
 	bool				Step						();
 	bool				Stop						();
 
-public:																														// --- DEBUG METHODS
-	bool				StepToPrevKeyframe			();
-	bool				StepToNextKeyframe			();
-	bool				RefreshBoneDisplay			();
-
 public:																														// --- CURRENT/BLENDING ANIMATION METHODS
-	AnimatorClip*		GetCurrentClip				() const;
-	AnimatorClip*		GetBlendingClip				() const;
-	
-	void				SetCurrentClip				(AnimatorClip* clip);
-	void				SetBlendingClip				(AnimatorClip* clip, uint blend_frames);
+	R_Animation*		GetCurrentAnimation			() const;
+	R_Animation*		GetBlendingAnimation		() const;
 
-	void				ClearCurrentClip			();
-	void				ClearBlendingClip			();
+	void				SetCurrentAnimation			(R_Animation* r_animation, uint index = 0);
+	void				SetBlendingAnimation		(R_Animation* r_animation_to_blend_to, uint blend_frames);
+
+	void				ClearCurrentAnimation		();
+	void				ClearBlendingAnimation		();
 
 public:																														// --- GET/SET METHODS
 	std::vector<LineSegment> GetDisplayBones		() const;
-
-	float				GetCurrentClipTime			() const;
-	float				GetCurrentClipFrame			() const;
-	uint				GetCurrentClipTick			() const;
-
-	const char*			GetCurrentClipAnimationName				() const;
-	float				GetCurrentClipAnimationTicksPerSecond	() const;
-	float				GetCurrentClipAnimationDuration			() const;
-
-	const char*			GetCurrentClipName			() const;
-	uint				GetCurrentClipStart			() const;
-	uint				GetCurrentClipEnd			() const;
-	float				GetCurrentClipDuration		() const;
-	float				GetCurrentClipDurationInSec	() const;
-
+	
 	float				GetPlaybackSpeed			() const;
 	bool				GetInterpolate				() const;
 	bool				GetLoopAnimation			() const;
 	bool				GetPlayOnStart				() const;
 	bool				GetCameraCulling			() const;
 	bool				GetShowBones				() const;
+
+	const char*			GetAnimationName			() const;
+	float				GetAnimationTime			() const;
+	uint				GetAnimationTicks			() const;
+	float				GetCurrentTicksPerSecond	() const;
+	float				GetCurrentDuration			() const;
 
 	void				SetPlaybackSpeed			(const float& playback_speed);
 	void				SetInterpolate				(const bool& set_to);
@@ -116,7 +105,7 @@ public:																														// --- GET/SET METHODS
 	void				SetCameraCulling			(const bool& set_to);
 	void				SetShowBones				(const bool& set_to);
 
-private:																													// --- INTERNAL METHODS
+private:
 	bool				StepAnimation				();
 	bool				BlendAnimation				();
 
@@ -130,15 +119,9 @@ private:																													// --- INTERNAL METHODS
 	const Quat			GetPoseToPoseRotation		(const uint& current_tick, const Channel& current_channel, const Quat& original_rotation) const;
 	const float3		GetPoseToPoseScale			(const uint& current_tick, const Channel& current_channel, const float3& original_scale) const;
 
-	void				FindAnimationBones			(const R_Animation* r_animation);
-	bool				FindBoneLinks				(const R_Animation* r_animation, std::vector<BoneLink>& links);
-	GameObject*			FindRootBone				(const std::vector<BoneLink>& links);
-	void				SetRootBone					(const GameObject* root_bone);
-
+	void				FindCurrentAnimationBones	();
 	void				UpdateDisplayBones			();
 	void				GenerateBoneSegments		(const GameObject* bone);
-	
-	bool				GenerateDefaultClip			(const R_Animation* r_animation, AnimatorClip& default_clip);
 
 	void				SortBoneLinksByHierarchy	(const std::vector<BoneLink>& bone_links, const GameObject* root_bone, std::vector<BoneLink>& sorted);
 
@@ -146,16 +129,17 @@ private:
 	std::vector<R_Animation*>					animations;																	// Animation Resources. Contain bone information (transforms...).
 	std::map<uint32, std::vector<BoneLink>>		animation_bones;
 	std::map<std::string, AnimatorClip>			clips;																		// Segments of animations. "Idle", "Walk", "Attack"...
-	
-	std::vector<BoneLink>		current_bones;																				// Multiple animations will have the same bones.
-	std::vector<BoneLink>		blending_bones;
+	std::vector<BoneLink>				bones;																				// Multiple animations will have the same bones.
 
 	std::vector<LineSegment>	display_bones;																				// Line Segments between GO bones. For debug purposes.
 
-	AnimatorClip*		current_clip;
-	AnimatorClip*		blending_clip;
+	AnimatorClip*	current_clip;
+	AnimatorClip*	blending_clip;
 
-	const GameObject*	current_root_bone;
+	R_Animation*	current_animation;
+	R_Animation*	blending_animation;
+
+	GameObject*		current_root_bone;
 
 private:																													// --- FUNCTIONALITY VARIABLES
 	uint			blend_frames;
@@ -165,9 +149,9 @@ private:																													// --- FUNCTIONALITY VARIABLES
 	bool			step;
 	bool			stop;
 
-	float			clip_time;
-	float			clip_frame;
-	uint			clip_tick;
+	float			animation_time;
+	float			animation_frame;
+	uint			animation_tick;
 
 private:																													// --- GET/SET VARIABLES	
 	float			playback_speed;

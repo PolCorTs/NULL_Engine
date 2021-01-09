@@ -471,8 +471,6 @@ void M_Scene::GenerateGameObjectsFromModel(const uint32& model_UID)
 		game_objects.push_back(item->second);
 	}
 
-
-
 	tmp.clear();
 }
 

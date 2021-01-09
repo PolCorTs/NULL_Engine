@@ -4,8 +4,8 @@
 template <typename T>
 struct Keyframe
 {
-	Keyframe() : time(-1.0f)									{}
-	Keyframe(double time, T value) : time(time), value(value)	{}
+	Keyframe();
+	Keyframe(double time, T value);
 
 	double time;
 	T value;

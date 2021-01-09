@@ -91,10 +91,10 @@ Application::~Application()
 	
 	while (item != modules.rend())
 	{
-		Module* module_to_delete = (*item);
+		//RELEASE((*item));
+		
+		delete (*item);
 		++item;
-
-		RELEASE((*item));
 	}
 }
 

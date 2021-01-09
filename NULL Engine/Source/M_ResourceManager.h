@@ -81,8 +81,6 @@ public:																												// --- META FILE METHODS ---
 	bool			MetaFileIsValid					(ParsonNode& meta_root);
 	bool			ResourceHasMetaType				(Resource* resource) const;
 
-	Resource*		GetResourceFromMetaFile			(const char* assets_path);
-
 public:																												// --- RESOURCE METHODS ---
 	Resource*		CreateResource					(RESOURCE_TYPE type, const char* assets_path = nullptr, const uint32& forced_UID = 0);	// 
 	bool			DeleteResource					(const uint32& UID);																	//

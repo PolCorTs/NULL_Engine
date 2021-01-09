@@ -112,7 +112,7 @@ void E_LoadFile::DrawDirectoriesTree(const char* root_directory, const char* ext
 
 	std::string root_dir = root_directory;
 
-	App->file_system->DiscoverFiles(root_dir.c_str(), files, directories, extension_to_filter);
+	App->file_system->DiscoverFiles(root_dir.c_str(), files, directories);
 
 	for (uint i = 0; i < directories.size(); ++i)
 	{
@@ -128,7 +128,12 @@ void E_LoadFile::DrawDirectoriesTree(const char* root_directory, const char* ext
 	std::sort(files.begin(), files.end());
 
 	for (uint i = 0; i < files.size(); ++i)
-	{	
+	{
+		if (App->file_system->GetFileExtension(files[i].c_str()) == extension_to_filter)
+		{
+			continue;
+		}
+		
 		if (ImGui::TreeNodeEx(files[i].c_str(), ImGuiTreeNodeFlags_Leaf))
 		{
 			if (ImGui::IsItemClicked())

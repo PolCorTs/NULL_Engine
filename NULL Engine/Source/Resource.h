@@ -14,14 +14,14 @@ typedef unsigned __int32	uint32;
 
 enum class RESOURCE_TYPE
 {
-	MODEL,
+	NONE,
 	MESH,
 	MATERIAL,
 	TEXTURE,
+	MODEL,
 	FOLDER,
 	ANIMATION,
 	SCENE,
-	NONE
 };
 
 class Resource

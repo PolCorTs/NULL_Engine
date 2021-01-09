@@ -12,7 +12,6 @@
 #include "C_Material.h"
 #include "C_Light.h"
 #include "C_Camera.h"
-#include "C_Animator.h"
 #include "C_Animation.h"
 
 #include "E_Inspector.h"
@@ -152,8 +151,7 @@ void E_Inspector::DrawComponents(GameObject* selected_game_object)
 		case COMPONENT_TYPE::MATERIAL:	{ DrawMaterialComponent((C_Material*)component); }		break;
 		case COMPONENT_TYPE::LIGHT:		{ DrawLightComponent((C_Light*)component); }			break;
 		case COMPONENT_TYPE::CAMERA:	{ DrawCameraComponent((C_Camera*)component); }			break;
-		case COMPONENT_TYPE::ANIMATOR:	{ DrawAnimatorComponent((C_Animator*)component); }		break;
-		case COMPONENT_TYPE::ANIMATION: { DrawAnimationComponent((C_Animation*)component); }	break;
+		case COMPONENT_TYPE::ANIMATION:	{ DrawAnimationComponent((C_Animation*)component); }	break;
 		}
 
 		if (type == COMPONENT_TYPE::NONE)
@@ -497,40 +495,25 @@ void E_Inspector::DrawCameraComponent(C_Camera* c_camera)
 	}
 }
 
-void E_Inspector::DrawAnimatorComponent(C_Animator* c_animator)
+void E_Inspector::DrawAnimationComponent(C_Animation* c_animation)
 {
 	bool show = true;
-	if (ImGui::CollapsingHeader("Animator", &show, ImGuiTreeNodeFlags_DefaultOpen))
+	if (ImGui::CollapsingHeader("Animation", &show, ImGuiTreeNodeFlags_DefaultOpen))
 	{
-		if (c_animator != nullptr)
+		if (c_animation != nullptr)
 		{
-			bool animation_is_active	= c_animator->IsActive();
-			if (ImGui::Checkbox("Is Active", &animation_is_active))							{ c_animator->SetIsActive(animation_is_active); }
+			bool animation_is_active = c_animation->IsActive();
+			if (ImGui::Checkbox("Is Active", &animation_is_active))
+			{
+				c_animation->SetIsActive(animation_is_active);
+			}
 
 			ImGui::Separator();
 
-			// --- ANIMATOR VARIABLES
-			std::vector<const char*> animations;
-			
-			float speed							= c_animator->GetPlaybackSpeed();
-			float min_speed						= 0.1f;
-			float max_speed						= 10.0f;
-			
-			bool interpolate					= c_animator->GetInterpolate();
-			bool loop_animation					= c_animator->GetLoopAnimation();
-			bool play_on_start					= c_animator->GetPlayOnStart();
-			bool camera_culling					= c_animator->GetCameraCulling();
-			bool show_bones						= c_animator->GetShowBones();
-
-			const char* animation_name			= c_animator->GetAnimationName();
-			float animation_time				= c_animator->GetAnimationTime();
-			uint animation_ticks				= c_animator->GetAnimationTicks();
-			float animation_ticks_per_second	= c_animator->GetCurrentTicksPerSecond();
-			float animation_duration			= c_animator->GetCurrentDuration();
-
-			// --- ANIMATOR SETTINGS
 			ImGui::TextColored(Cyan.C_Array(), "Animation Settings");
 
+			// Select Animation
+			std::vector<const char*> animations;
 			if (ImGui::BeginCombo("Select Animation", "TAKE ==!"))
 			{
 
@@ -538,32 +521,74 @@ void E_Inspector::DrawAnimatorComponent(C_Animator* c_animator)
 				ImGui::EndCombo();
 			}
 
-			if (ImGui::Button("Play"))									{ c_animator->Play(); }	ImGui::SameLine();
-			if (ImGui::Button("Pause"))									{ c_animator->Pause(); }	ImGui::SameLine();
-			if (ImGui::Button("Step"))									{ c_animator->Step(); }	ImGui::SameLine();
-			if (ImGui::Button("Stop"))									{ c_animator->Stop(); }
+			// Play, Pause, Step & Stop
+			if (ImGui::Button("Play"))	{ c_animation->Play(); }	ImGui::SameLine();
+			if (ImGui::Button("Pause")) { c_animation->Pause(); }	ImGui::SameLine();
+			if (ImGui::Button("Step"))	{ c_animation->Step(); }	ImGui::SameLine();
+			if (ImGui::Button("Stop"))	{ c_animation->Stop(); }
 			
-			if (ImGui::SliderFloat("Playback Speed", &speed, min_speed, max_speed, "%.3f", 0))	{ c_animator->SetPlaybackSpeed(speed); }
+			// Playback Speed
+			float playback_speed		= c_animation->GetPlaybackSpeed();
+			float min_playback_speed	= 0.1f;
+			float max_playback_speed	= 10.0f;
+			if (ImGui::SliderFloat("Playback Speed", &playback_speed, min_playback_speed, max_playback_speed, "%.3f", 1.0f))
+			{
+				c_animation->SetPlaybackSpeed(playback_speed);
+			}
 
-			if (ImGui::Checkbox("Interpolate", &interpolate))			{ c_animator->SetInterpolate(interpolate); }
-			if (ImGui::Checkbox("Loop Animation", &loop_animation))		{ c_animator->SetLoopAnimation(loop_animation); }
-			if (ImGui::Checkbox("Play On Start", &play_on_start))		{ c_animator->SetPlayOnStart(play_on_start); }
-			if (ImGui::Checkbox("Camera Culling", &camera_culling))		{ c_animator->SetCameraCulling(camera_culling); }
-			if (ImGui::Checkbox("Show Bones", &show_bones))				{ c_animator->SetShowBones(show_bones); }
+			// Interpolate
+			bool interpolate = c_animation->GetInterpolate();
+			if (ImGui::Checkbox("Interpolate", &interpolate))
+			{
+				c_animation->SetInterpolate(interpolate);
+			}
+
+			// Loop
+			bool loop_animation = c_animation->GetLoopAnimation();
+			if (ImGui::Checkbox("Loop Animation", &loop_animation))
+			{
+				c_animation->SetLoopAnimation(loop_animation);
+			}
+
+			// Play Automatically
+			bool play_on_start = c_animation->GetPlayOnStart();
+			if (ImGui::Checkbox("Play On Start", &play_on_start))
+			{
+				c_animation->SetPlayOnStart(play_on_start);
+			}
+
+			// Renderer Culling
+			bool camera_culling = c_animation->GetCameraCulling();
+			if (ImGui::Checkbox("Camera Culling", &camera_culling))
+			{
+				c_animation->SetCameraCulling(camera_culling);
+			}
+
+			// Show Bones
+			bool show_bones = c_animation->GetShowBones();
+			if (ImGui::Checkbox("Show Bones", &show_bones))
+			{
+				c_animation->SetShowBones(show_bones);
+			}
 
 			ImGui::Separator();
 
-			// --- ANIMATOR DEBUG CONTROLS
 			ImGui::TextColored(Cyan.C_Array(), "Debug Controls");
 
-			if (ImGui::Button("Previous Keyframe"))						{ c_animator->StepToPrevKeyframe(); }	ImGui::SameLine(150.0f);
-			if (ImGui::Button("Next Keyframe"))							{ c_animator->StepToNextKeyframe(); }
-			if (ImGui::Button("Refresh Bone Display"))					{ c_animator->RefreshBoneDisplay(); }
+			if (ImGui::Button("Previous Keyframe"))		{ c_animation->StepToPrevKeyframe(); }	ImGui::SameLine();
+			if (ImGui::Button("Next Keyframe"))			{ c_animation->StepToNextKeyframe(); }
+
+			if (ImGui::Button("Refresh Bone Display"))	{ c_animation->RefreshBoneDisplay(); }
 
 			ImGui::Separator();
 
-			// --- ANIMATOR STATS
 			ImGui::TextColored(Cyan.C_Array(), "Animation Stats");
+
+			const char* animation_name			= c_animation->GetAnimationName();
+			float animation_time				= c_animation->GetAnimationTime();
+			uint animation_ticks				= c_animation->GetAnimationTicks();
+			float animation_ticks_per_second	= c_animation->GetCurrentTicksPerSecond();
+			float animation_duration			= c_animation->GetCurrentDuration();
 
 			ImGui::Text("Name:");				ImGui::SameLine();	ImGui::TextColored(Yellow.C_Array(), "             %s",		animation_name);
 			ImGui::Text("Time:");				ImGui::SameLine();	ImGui::TextColored(Yellow.C_Array(), "             %.3f",	animation_time);
@@ -574,7 +599,7 @@ void E_Inspector::DrawAnimatorComponent(C_Animator* c_animator)
 		
 		if (!show)
 		{
-			component_to_delete				= c_animator;
+			component_to_delete				= c_animation;
 			show_delete_component_popup		= true;
 		}
 		
@@ -582,36 +607,9 @@ void E_Inspector::DrawAnimatorComponent(C_Animator* c_animator)
 	}
 }
 
-void E_Inspector::DrawAnimationComponent(C_Animation* c_animation)
-{
-	static bool show = true;
-	if (ImGui::CollapsingHeader("Animation", &show, ImGuiTreeNodeFlags_DefaultOpen))
-	{
-		if (c_animation != nullptr)
-		{
-			bool is_active = c_animation->IsActive();
-			if (ImGui::Checkbox("Is Active", &is_active)) { c_animation->SetIsActive(is_active); }
-
-			ImGui::Separator();
-
-			ImGui::TextColored(Cyan.C_Array(), "Animation Settings:");
-
-			ImGui::Separator();
-		}
-
-		if (!show)
-		{
-			component_to_delete				= c_animation;
-			show_delete_component_popup		= true;
-		}
-
-		ImGui::Separator();
-	}
-}
-
 void E_Inspector::AddComponentCombo(GameObject* selected_game_object)
 {
-	ImGui::Combo("##", &component_type, "Add Component\0Transform\0Mesh\0Material\0Light\0Camera\0Animator\0Animation");
+	ImGui::Combo("##", &component_type, "Add Component\0Transform\0Mesh\0Material\0Light\0Camera\0Animation");
 
 	ImGui::SameLine();
 

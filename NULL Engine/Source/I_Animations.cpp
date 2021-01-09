@@ -1,12 +1,8 @@
-#include "Assimp.h"
-
 #include "VariableTypedefs.h"
 
 #include "R_Animation.h"
 
 #include "I_Animations.h"
-
-#include "MemoryManager.h"
 
 void Importer::Animations::Import(aiAnimation* ai_animation, R_Animation* r_animation)
 {

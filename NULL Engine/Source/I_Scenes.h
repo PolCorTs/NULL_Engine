@@ -37,10 +37,9 @@ namespace Importer
 
 			bool			NodeIsDummyNode				(const aiNode& ai_node);
 
-			static std::vector<aiMesh*>				ai_meshes;
-			static std::vector<aiMaterial*>			ai_materials;
-			static std::map<uint, ModelNode>		loaded_nodes;
-			static std::map<std::string, uint32>	loaded_textures;
+			static std::vector<aiMesh*>			ai_meshes;
+			static std::vector<aiMaterial*>		ai_materials;
+			static std::map<uint, ModelNode>	loaded_nodes;
 		}
 	}
 }

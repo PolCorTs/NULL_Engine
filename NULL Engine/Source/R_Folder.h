@@ -5,8 +5,6 @@
 
 class ParsonNode;
 
-typedef unsigned __int32 uint32;
-
 class R_Folder : public Resource
 {
 public:
@@ -18,13 +16,8 @@ public:
 	bool SaveMeta(ParsonNode& meta_root) const override;
 	bool LoadMeta(const ParsonNode& meta_root) override;
 
-public:
-	std::vector<uint32> GetContainedResources() const;
-
-	bool IsContained(uint32 UID) const;
-
 private:
-	std::vector<uint32> contained_resources;
+
 };
 
 #endif // !_R_FOLDER_H__

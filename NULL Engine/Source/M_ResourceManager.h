@@ -41,8 +41,7 @@ public:																												// --- IMPORT FILE METHODS ---
 	void			SetResourceLibraryPathAndFile	(Resource* resource);
 
 public:																												// --- RESOURCE METHODS ---
-	Resource*		CreateResource					(RESOURCE_TYPE type, const char* assets_path = nullptr);		//
-	Resource*		CreateEmptyResource				(RESOURCE_TYPE type);											// 
+	Resource*		CreateResource					(RESOURCE_TYPE type, const char* assets_path = nullptr);		// 
 	bool			AddResource						(Resource* resource);											// 
 	bool			DeleteResource					(uint32 UID);													// 
 	Resource*		GetResource						(uint32 UID);													// 

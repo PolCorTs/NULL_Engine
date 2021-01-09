@@ -217,8 +217,6 @@ bool M_Scene::SaveScene(const char* scene_name) const
 		LOG("[ERROR] Could not save the current scene! Error: FileSystem could not write any data!");
 	}
 
-	// Create Empty R_Scene* and Save the current scene with its UID.
-
 	name.clear();
 	path.clear();
 

@@ -11,6 +11,7 @@ Resource::Resource(RESOURCE_TYPE type) :
 type			(type),
 uid				(Random::LCG::GetRandomUint()),
 references		(0),
+name			("[NONE]"),
 assets_path		("[NONE]"), 
 assets_file		("[NONE]"), 
 library_path	("[NONE]"), 
@@ -28,6 +29,7 @@ bool Resource::CleanUp()
 {
 	bool ret = true;
 
+	name.clear();
 	assets_path.clear();
 	assets_file.clear();
 	library_path.clear();
@@ -38,16 +40,12 @@ bool Resource::CleanUp()
 
 bool Resource::SaveMeta(ParsonNode& meta_root) const
 {
-	bool ret = true;
 
-	return ret;
 }
 
 bool Resource::LoadMeta(const ParsonNode& meta_root)
 {
-	bool ret = true;
 
-	return ret;
 }
 
 // --- RESOURCE METHODS ---
@@ -90,6 +88,11 @@ void Resource::SetReferences(const uint& references)
 	this->references = references;
 }
 
+const char* Resource::GetName() const
+{
+	return name.c_str();
+}
+
 const char* Resource::GetAssetsPath() const
 {
 	return assets_path.c_str();
@@ -115,6 +118,7 @@ void Resource::SetAssetsPath(const char* assets_path)
 void Resource::SetAssetsFile(const char* assets_file)
 {
 	this->assets_file	= assets_file;
+	name				= assets_file;
 }
 
 void Resource::SetLibraryPath(const char* library_path)
@@ -135,21 +139,6 @@ void Resource::SetLibraryPathAndFile()
 	
 	switch (type)
 	{
-	case RESOURCE_TYPE::ANIMATION:
-		directory = ANIMATIONS_PATH;
-		extension = ANIMATIONS_EXTENSION;
-		break;
-
-	case RESOURCE_TYPE::FOLDER:
-		directory = FOLDERS_PATH;
-		extension =	FOLDERS_EXTENSION;
-		break;
-
-	case RESOURCE_TYPE::MODEL:
-		directory = MODELS_PATH;
-		extension = MODELS_EXTENSION;
-		break;
-
 	case RESOURCE_TYPE::MESH:
 		directory = MESHES_PATH;
 		extension = MESHES_EXTENSION;
@@ -163,11 +152,6 @@ void Resource::SetLibraryPathAndFile()
 	case RESOURCE_TYPE::TEXTURE:
 		directory = TEXTURES_PATH;
 		extension = TEXTURES_EXTENSION;
-		break;
-
-	case RESOURCE_TYPE::SCENE:
-		directory = SCENES_PATH;
-		extension = SCENES_EXTENSION;
 		break;
 	}
 	

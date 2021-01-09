@@ -389,12 +389,6 @@ void Application::LoadConfiguration(const char* file)
 
 void Application::SaveConfigurationNow(const char* file)
 {
-	if (file == nullptr)
-	{
-		LOG("[ERROR] Application: Could not Save Engine Configuration! Error: Given File Path string was nullptr.");
-		return;
-	}
-	
 	ParsonNode config;
 	ParsonNode node = config.SetNode("EditorState");
 
@@ -404,15 +398,9 @@ void Application::SaveConfigurationNow(const char* file)
 	}
 
 	char* buffer = nullptr;
-	uint written = config.SerializeToFile(file, &buffer);
-	if (written > 0)
-	{
-		LOG("[STATE] Application: Successfully Saved Engine Configuration! Path: %s", file);
-	}
-	else
-	{
-		LOG("[ERROR] Application: Could not Save Engine Configuration! Error: File System could not write the File.");
-	}
+	uint size = config.SerializeToBuffer(&buffer);
+
+	file_system->Save(file, buffer, size);
 
 	RELEASE_ARRAY(buffer);
 }

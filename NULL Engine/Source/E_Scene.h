@@ -24,13 +24,12 @@ private:
 	void HandleGuizmos				();
 
 public:
-	float2 GetWorldMousePosition	();
-	float2 GetScreenMousePosition	();
-	float2 GetWorldMouseMotion		();
-	float2 GetSceneTextureSize		();
+	float2 GetWorldMousePosition();
+	float2 GetScreenMousePosition();
+	float2 GetWorldMouseMotion();
+	float2 GetSceneTextureSize();
 
-	bool UsingGuizmo				();
-	bool HoveringGuizmo				();
+	bool UsingGuizmo();
 
 private:
 	ImVec2					tex_size;
@@ -39,8 +38,6 @@ private:
 
 	ImGuizmo::OPERATION		guizmo_operation;
 	ImGuizmo::MODE			guizmo_mode;
-
-	bool					using_guizmo;
 };
 
 #endif // !__E_SCENE_H__

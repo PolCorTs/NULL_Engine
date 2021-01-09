@@ -163,7 +163,6 @@ UPDATE_STATUS M_Input::PreUpdate(float dt)
 
 					if (event.window.event == SDL_WINDOWEVENT_CLOSE)
 					{
-						App->quit = true;
 						return UPDATE_STATUS::STOP;
 					}
 				}

@@ -1,8 +1,5 @@
 #include "MathGeoTransform.h"
-
 #include "Color.h"
-
-#include "Time.h"
 
 #include "Application.h"
 #include "M_Renderer3D.h"
@@ -500,7 +497,7 @@ void E_Inspector::DrawCameraComponent(C_Camera* c_camera)
 	}
 }
 
-void E_Inspector::DrawAnimatorComponent(C_Animator* c_animator)								// TODO: Segment this Method in Multiple Smaller Methods.
+void E_Inspector::DrawAnimatorComponent(C_Animator* c_animator)
 {
 	bool show = true;
 	if (ImGui::CollapsingHeader("Animator", &show, ImGuiTreeNodeFlags_DefaultOpen))
@@ -513,9 +510,8 @@ void E_Inspector::DrawAnimatorComponent(C_Animator* c_animator)								// TODO: 
 			ImGui::Separator();
 
 			// --- ANIMATOR VARIABLES
-			static int selected_clip			= 0;
-			std::string clip_names				= c_animator->GetClipNamesAsString();
-
+			std::vector<const char*> animations;
+			
 			float speed							= c_animator->GetPlaybackSpeed();
 			float min_speed						= 0.1f;
 			float max_speed						= 10.0f;
@@ -531,31 +527,17 @@ void E_Inspector::DrawAnimatorComponent(C_Animator* c_animator)								// TODO: 
 			float animation_ticks_per_second	= c_animator->GetCurrentClipAnimationTicksPerSecond();
 			float animation_duration			= c_animator->GetCurrentClipAnimationDuration();
 
-			const char* current_clip_name		= c_animator->GetCurrentClipName();
-			uint current_clip_start				= c_animator->GetCurrentClipStart();
-			uint current_clip_end				= c_animator->GetCurrentClipEnd();
-			float current_clip_duration			= c_animator->GetCurrentClipDuration();
+			const char* clip_name				= c_animator->GetCurrentClipName();
+			uint clip_start						= c_animator->GetCurrentClipStart();
+			uint clip_end						= c_animator->GetCurrentClipEnd();
+			float clip_duration					= c_animator->GetCurrentClipDuration();
 
 			float clip_time						= c_animator->GetCurrentClipTime();
 			float clip_frame					= c_animator->GetCurrentClipFrame();
 			uint clip_ticks						= c_animator->GetCurrentClipTick();
 
-			// --- NEW CLIP VARIABLES
-			static int selected_animation		= 0;
-			std::string animation_names			= c_animator->GetAnimationNamesAsString();
-
-			static char new_clip_name[128]		= "Enter Clip Name";
-			ImGuiInputTextFlags input_txt_flags	= ImGuiInputTextFlags_EnterReturnsTrue | ImGuiInputTextFlags_AutoSelectAll;
-
-			static int new_clip_start			= 0;
-			static int new_clip_end				= (int)animation_duration;
-			int new_clip_min					= 0;
-			int new_clip_max					= (int)animation_duration;
-
-			static bool success					= false;																			// --- TODO: Transform into non-static variables later.
-			static bool text_timer_running		= false;																			//
-			static float text_timer				= 0.0f;																				//
-			static float text_duration			= 2.5f;																				// ----------------------------------------------------
+			int start							= 0;
+			int end								= (int)animation_duration;
 			
 			if (ImGui::BeginTabBar("AnimatorTabBar", ImGuiTabBarFlags_None))
 			{
@@ -564,23 +546,25 @@ void E_Inspector::DrawAnimatorComponent(C_Animator* c_animator)								// TODO: 
 					// --- ANIMATOR SETTINGS
 					ImGui::TextColored(Cyan.C_Array(), "Animation Settings");
 
-					if (ImGui::Combo("Select Clip", &selected_clip, clip_names.c_str()))
+					if (ImGui::BeginCombo("Select Clip", "Idle"))
 					{
-						c_animator->SetCurrentClipByIndex((uint)selected_clip);
+
+
+						ImGui::EndCombo();
 					}
 
-					if (ImGui::Button("Play"))									{ c_animator->Play(); }		ImGui::SameLine();
-					if (ImGui::Button("Pause"))									{ c_animator->Pause(); }	ImGui::SameLine();
-					if (ImGui::Button("Step"))									{ c_animator->Step(); }		ImGui::SameLine();
-					if (ImGui::Button("Stop"))									{ c_animator->Stop(); }
+					if (ImGui::Button("Play")) { c_animator->Play(); }		ImGui::SameLine();
+					if (ImGui::Button("Pause")) { c_animator->Pause(); }	ImGui::SameLine();
+					if (ImGui::Button("Step")) { c_animator->Step(); }		ImGui::SameLine();
+					if (ImGui::Button("Stop")) { c_animator->Stop(); }
 
 					if (ImGui::SliderFloat("Playback Speed", &speed, min_speed, max_speed, "%.3f", 0)) { c_animator->SetPlaybackSpeed(speed); }
 
-					if (ImGui::Checkbox("Interpolate", &interpolate))			{ c_animator->SetInterpolate(interpolate); }
-					if (ImGui::Checkbox("Loop Animation", &loop_animation))		{ c_animator->SetLoopAnimation(loop_animation); }
-					if (ImGui::Checkbox("Play On Start", &play_on_start))		{ c_animator->SetPlayOnStart(play_on_start); }
-					if (ImGui::Checkbox("Camera Culling", &camera_culling))		{ c_animator->SetCameraCulling(camera_culling); }
-					if (ImGui::Checkbox("Show Bones", &show_bones))				{ c_animator->SetShowBones(show_bones); }
+					if (ImGui::Checkbox("Interpolate", &interpolate)) { c_animator->SetInterpolate(interpolate); }
+					if (ImGui::Checkbox("Loop Animation", &loop_animation)) { c_animator->SetLoopAnimation(loop_animation); }
+					if (ImGui::Checkbox("Play On Start", &play_on_start)) { c_animator->SetPlayOnStart(play_on_start); }
+					if (ImGui::Checkbox("Camera Culling", &camera_culling)) { c_animator->SetCameraCulling(camera_culling); }
+					if (ImGui::Checkbox("Show Bones", &show_bones)) { c_animator->SetShowBones(show_bones); }
 
 					ImGui::Separator();
 
@@ -595,71 +579,54 @@ void E_Inspector::DrawAnimatorComponent(C_Animator* c_animator)								// TODO: 
 
 					ImGui::TextColored(Cyan.C_Array(), "Clip Stats");
 
-					ImGui::Text("Name:");				ImGui::SameLine();	ImGui::TextColored(Yellow.C_Array(), "             %s",		current_clip_name);
+					ImGui::Text("Name:");				ImGui::SameLine();	ImGui::TextColored(Yellow.C_Array(), "             %s",		clip_name);
 					ImGui::Text("Time:");				ImGui::SameLine();	ImGui::TextColored(Yellow.C_Array(), "             %.3f",	clip_time);
 					ImGui::Text("Frame:");				ImGui::SameLine();	ImGui::TextColored(Yellow.C_Array(), "            %.3f",	clip_frame);
 					ImGui::Text("Tick:");				ImGui::SameLine();	ImGui::TextColored(Yellow.C_Array(), "		     %u",		clip_ticks);
-					ImGui::Text("Range:");				ImGui::SameLine();	ImGui::TextColored(Yellow.C_Array(), "            %u - %u", current_clip_start, current_clip_end);
-					ImGui::Text("Duration:");			ImGui::SameLine();	ImGui::TextColored(Yellow.C_Array(), "         %.3f",		current_clip_duration);
+					ImGui::Text("Range:");				ImGui::SameLine();	ImGui::TextColored(Yellow.C_Array(), "            %u - %u", clip_start, clip_end);
+					ImGui::Text("Duration:");			ImGui::SameLine();	ImGui::TextColored(Yellow.C_Array(), "         %.3f",		clip_duration);
 
 					ImGui::Separator();
 
 					// --- ANIMATOR DEBUG CONTROLS
 					ImGui::TextColored(Cyan.C_Array(), "Debug Controls");
 
-					if (ImGui::Button("Previous Keyframe"))		{ c_animator->StepToPrevKeyframe(); }	ImGui::SameLine(150.0f);
-					if (ImGui::Button("Next Keyframe"))			{ c_animator->StepToNextKeyframe(); }
-					if (ImGui::Button("Refresh Bone Display"))	{ c_animator->RefreshBoneDisplay(); }
+					if (ImGui::Button("Previous Keyframe")) { c_animator->StepToPrevKeyframe(); }	ImGui::SameLine(150.0f);
+					if (ImGui::Button("Next Keyframe")) { c_animator->StepToNextKeyframe(); }
+					if (ImGui::Button("Refresh Bone Display")) { c_animator->RefreshBoneDisplay(); }
 
 					ImGui::EndTabItem();
 				}
 				
 				if (ImGui::BeginTabItem("Clip Manager"))
 				{
-					ImGui::Separator();
-					ImGui::Separator();
-					
-					ImGui::PushStyleVar(ImGuiStyleVar_ChildRounding, 5.0f);
-					ImGui::BeginChild("Clip Manager Child", ImVec2(0.0f, 145.0f), true);
-
 					ImGui::TextColored(Cyan.C_Array(), "Create Clip");
 
-					ImGui::Combo("Select Animation", &selected_animation, animation_names.c_str());
-					ImGui::InputText("Clip Name", new_clip_name, IM_ARRAYSIZE(new_clip_name), input_txt_flags);
-					ImGui::SliderInt("Clip Start", &new_clip_start, new_clip_min, new_clip_max);
-					ImGui::SliderInt("Clip End", &new_clip_end, new_clip_min, new_clip_max);
+					if (ImGui::BeginCombo("Select Animation", "TAKE ==!"))
+					{
 
-					if (ImGui::Button("Create")) 
-					{ 
-						success = c_animator->AddClip(AnimatorClip(c_animator->GetAnimationByIndex((uint)selected_animation), new_clip_name, new_clip_start, new_clip_end)); 
-						text_timer_running = true;
+
+						ImGui::EndCombo();
 					}
 
-					if (text_timer_running)
-					{	
+					static char buffer[64];
+					strcpy_s(buffer, "Enter Clip Name");
+					if (ImGui::InputText("Clip Name", buffer, IM_ARRAYSIZE(buffer), ImGuiInputTextFlags_EnterReturnsTrue))
+					{
+						//selected_game_object->SetName(buffer);
+					}
+
+					if (ImGui::SliderInt("Clip Start", &start, 0, 120))		{}
+					if (ImGui::SliderInt("Clip End", &end, 0, 120))			{}
+
+					static bool clip_exists = false;
+					if (ImGui::Button("Create"))							{ clip_exists = !clip_exists; }
+					if (clip_exists)
+					{
 						ImGui::SameLine();
-						
-						if (success)
-						{
-							ImGui::TextColored(Green.C_Array(), "Successfully Created Clip { %s }", new_clip_name);
-						}
-						else
-						{
-							ImGui::TextColored(Red.C_Array(), "A clip with the same name already exists!");
-						}
-
-						text_timer += Time::Real::GetDT();
-						if (text_timer > text_duration)
-						{
-							text_timer_running = false;
-							text_timer = 0.0f;
-						}
+						ImGui::TextColored(Red.C_Array(), "A clip with the same name already exists!");
 					}
 
-					ImGui::EndChild();
-					ImGui::PopStyleVar();
-
-					ImGui::Separator();
 					ImGui::Separator();
 
 					ImGui::TextColored(Cyan.C_Array(), "Existing Clips");

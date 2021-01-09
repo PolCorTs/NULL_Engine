@@ -21,8 +21,7 @@ guizmo_operation	(ImGuizmo::OPERATION::TRANSLATE),
 guizmo_mode			(ImGuizmo::MODE::WORLD),
 using_guizmo		(false),
 scene_focused		(false),
-game_focused		(false),
-want_text_input		(false)
+game_focused		(false)
 {
 
 }
@@ -35,8 +34,6 @@ E_Viewport::~E_Viewport()
 bool E_Viewport::Draw(ImGuiIO& io)
 {
 	bool ret = true;
-	
-	want_text_input = io.WantTextInput;																	// Later Generalize as a M_Editor Variable/Method.
 	
 	DrawScene();
 	
@@ -232,23 +229,20 @@ void E_Viewport::HandleGuizmos()
 {	
 	using_guizmo = false;
 
-	if (!want_text_input)
+	if (App->input->GetKey(SDL_SCANCODE_W) == KEY_STATE::KEY_DOWN)
 	{
-		if (App->input->GetKey(SDL_SCANCODE_W) == KEY_STATE::KEY_DOWN)
-		{
-			guizmo_operation = ImGuizmo::OPERATION::TRANSLATE;
-			guizmo_mode = ImGuizmo::MODE::WORLD;
-		}
-		if (App->input->GetKey(SDL_SCANCODE_E) == KEY_STATE::KEY_DOWN)
-		{
-			guizmo_operation = ImGuizmo::OPERATION::ROTATE;
-			guizmo_mode = ImGuizmo::MODE::WORLD;
-		}
-		if (App->input->GetKey(SDL_SCANCODE_R) == KEY_STATE::KEY_DOWN)
-		{
-			guizmo_operation = ImGuizmo::OPERATION::SCALE;
-			guizmo_mode = ImGuizmo::MODE::LOCAL;
-		}
+		guizmo_operation	= ImGuizmo::OPERATION::TRANSLATE;
+		guizmo_mode			= ImGuizmo::MODE::WORLD;
+	}
+	if (App->input->GetKey(SDL_SCANCODE_E) == KEY_STATE::KEY_DOWN)
+	{
+		guizmo_operation	= ImGuizmo::OPERATION::ROTATE;
+		guizmo_mode			= ImGuizmo::MODE::WORLD;
+	}
+	if (App->input->GetKey(SDL_SCANCODE_R) == KEY_STATE::KEY_DOWN)
+	{
+		guizmo_operation	= ImGuizmo::OPERATION::SCALE;
+		guizmo_mode			= ImGuizmo::MODE::LOCAL;
 	}
 	
 	if (App->editor->GetSelectedGameObjectThroughEditor() == nullptr)

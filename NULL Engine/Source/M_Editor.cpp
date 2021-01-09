@@ -23,7 +23,8 @@
 #include "E_Inspector.h"
 #include "E_Console.h"
 #include "E_Project.h"
-#include "E_Viewport.h"
+#include "E_Scene.h"
+#include "E_Game.h"
 #include "E_ImGuiDemo.h"
 #include "E_About.h"
 #include "E_LoadFile.h"
@@ -43,7 +44,8 @@ hierarchy		(nullptr),
 inspector		(nullptr),
 console			(nullptr),
 project			(nullptr),
-viewport		(nullptr),
+scene			(nullptr),
+game			(nullptr),
 imgui_demo		(nullptr),
 about			(nullptr),
 load_file		(nullptr)
@@ -55,7 +57,8 @@ load_file		(nullptr)
 	inspector		= new E_Inspector();
 	console			= new E_Console();
 	project			= new E_Project();
-	viewport		= new E_Viewport();
+	scene			= new E_Scene();
+	game			= new E_Game();
 	imgui_demo		= new E_ImGuiDemo();
 	about			= new E_About();
 	load_file		= new E_LoadFile();
@@ -67,7 +70,8 @@ load_file		(nullptr)
 	AddEditorPanel(inspector);
 	AddEditorPanel(console);
 	AddEditorPanel(project);
-	AddEditorPanel(viewport);
+	AddEditorPanel(game);
+	AddEditorPanel(scene);
 	AddEditorPanel(imgui_demo);
 	AddEditorPanel(about);
 	AddEditorPanel(load_file);
@@ -459,32 +463,32 @@ void M_Editor::SetMasterCameraThroughEditor()
 
 float2 M_Editor::GetWorldMousePositionThroughEditor() const
 {
-	return this->viewport->GetWorldMousePosition();
+	return this->scene->GetWorldMousePosition();
 }
 
 float2 M_Editor::GetWorldMouseMotionThroughEditor() const
 {
-	return this->viewport->GetWorldMouseMotion();
+	return this->scene->GetWorldMouseMotion();
 }
 
 float2 M_Editor::GetSceneTextureSizeThroughEditor() const
 {
-	return this->viewport->GetSceneTextureSize();
+	return this->scene->GetSceneTextureSize();
 }
 
 bool M_Editor::SceneIsHovered() const
 {
-	return this->viewport->IsHovered();
+	return this->scene->IsHovered();
 }
 
 bool M_Editor::UsingGuizmoInScene() const
 {
-	return this->viewport->UsingGuizmo();
+	return this->scene->UsingGuizmo();
 }
 
 bool M_Editor::HoveringGuizmo() const
 {
-	return this->viewport->HoveringGuizmo();
+	return this->scene->HoveringGuizmo();
 }
 
 bool M_Editor::SelectedIsSceneRoot() const

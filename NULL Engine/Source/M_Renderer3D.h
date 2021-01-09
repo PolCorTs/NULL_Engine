@@ -5,8 +5,6 @@
 #include "MathGeoLib/include/Geometry/LineSegment.h"
 #include "MathGeoLib/include/Geometry/Triangle.h"
 
-#include "Icons.h"
-
 #include "Module.h"
 #include "Light.h"
 
@@ -87,7 +85,6 @@ public:
 	~M_Renderer3D();
 
 	bool			Init				(ParsonNode& configuration) override;
-	bool			Start				() override;
 	UPDATE_STATUS	PreUpdate			(float dt) override;
 	UPDATE_STATUS	PostUpdate			(float dt) override;
 	bool			CleanUp				() override;
@@ -120,17 +117,13 @@ public:																											// --- RENDER GEOMETRY
 	void			RenderCuboids				();
 	void			RenderRays					();
 	void			DeleteFromMeshRenderers		(C_Mesh* c_mesh_to_delete);
-	void			DeleteFromMeshRenderers		(R_Mesh* r_mesh_to_delete);
 	void			DeleteFromCuboids			(float3* cuboid_to_delete);
 	void			ClearRenderers				();																// Loading scene measure.
 
 	void			AddPrimitive				(Primitive* primitive);
 	void			CreatePrimitiveExamples		();
 
-
 public:																											// --- GET/SET METHODS
-	Icons			GetEngineIcons				() const;
-	
 	uint			GetDebugTextureID			() const;
 	uint			GetSceneFramebuffer			() const;
 	uint			GetSceneRenderTexture		() const;
@@ -164,7 +157,6 @@ public:																											// --- GET/SET METHODS
 	void			SetRenderBoundingBoxes		(const bool& set_to);											// 
 	void			SetRenderPrimtiveExamples	(const bool& set_to);											// 
 
-
 public:
 	Light					lights[MAX_LIGHTS];																	// 
 	SDL_GLContext			context;																			// 
@@ -174,8 +166,6 @@ public:
 private:
 	std::vector<MeshRenderer>	mesh_renderers;
 	std::vector<CuboidRenderer> cuboid_renderers;
-	
-	Icons					engine_icons;
 
 	uint					scene_framebuffer;
 	uint					depth_buffer;

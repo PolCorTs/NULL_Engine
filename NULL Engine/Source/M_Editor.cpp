@@ -3,8 +3,6 @@
 #include "ImGui.h"
 #include "ImGui/include/imgui_internal.h"
 
-#include "Icons.h"
-
 #include "Application.h"															// ATTENTION: Globals.h already included in Module.h
 #include "M_Window.h"
 #include "M_Renderer3D.h"
@@ -497,11 +495,6 @@ bool M_Editor::HoveringGuizmo() const
 bool M_Editor::SelectedIsSceneRoot() const
 {
 	return (App->scene->GetSelectedGameObject() == App->scene->GetSceneRoot());
-}
-
-void M_Editor::GetEngineIconsThroughEditor(Icons& engine_icons)
-{
-	engine_icons = App->renderer->GetEngineIcons();
 }
 
 void M_Editor::GetResourcesThroughEditor(std::map<uint32, Resource*>& resources) const

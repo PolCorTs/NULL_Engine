@@ -5,7 +5,6 @@
 #include "MathGeoLib/include/Math/float2.h"
 #include "Module.h"
 
-struct Icons;
 class ParsonNode;
 
 class Resource;
@@ -104,9 +103,7 @@ public:																							// --- Panel/Window Methods. Acts as an interface 
 	bool			UsingGuizmoInScene					() const;								// Viewport: 
 	bool			HoveringGuizmo						() const;								// Viewport: 
 
-	void			GetEngineIconsThroughEditor			(Icons& engine_icons);
-
-	void			GetResourcesThroughEditor			(std::map<uint32, Resource*>& resources) const;	// Resources: 
+	void			GetResourcesThroughEditor			(std::map<uint32, Resource*>& resources) const;
 
 	void			SaveSceneThroughEditor				(const char* scene_name);
 	void			LoadFileThroughEditor				(const char* path);						// Load File: Will send the given path to the Importer.

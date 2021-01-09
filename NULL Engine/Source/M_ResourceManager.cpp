@@ -58,8 +58,7 @@ bool M_ResourceManager::Start()
 {
 	bool ret = true;
 
-	RefreshDirectoryFiles(ASSETS_DIRECTORY);
-	RefreshDirectoryFiles(ENGINE_DIRECTORY);
+	RefreshAssetFiles();
 
 	return ret;
 }
@@ -86,7 +85,7 @@ UPDATE_STATUS M_ResourceManager::PreUpdate(float dt)
 			++item;
 		}
 		
-		RefreshDirectoryFiles(ASSETS_DIRECTORY);
+		RefreshAssetFiles();
 
 		file_refresh_timer = 0.0f;
 	}
@@ -149,24 +148,17 @@ bool M_ResourceManager::LoadConfiguration(ParsonNode& configuration)
 
 // ----- M_RESOURCEMANAGER METHODS -----
 // --- ASSETS MONITORING METHODS ---
-void M_ResourceManager::RefreshDirectoryFiles(const char* directory)
+void M_ResourceManager::RefreshAssetFiles()
 {
-	if (directory == nullptr)
-	{
-		LOG("[ERROR] Resource Manager: Could not Refresh Directory Files! Error: Directory string was nullptr.");
-		return;
-	}
-	
 	std::vector<std::string> files_to_import;															// Refresh folders and create .meta files for all those files that do not have one.
 	std::vector<std::string> files_to_update;															// Also update the .meta and reimport all those files that have been modified.
 	std::vector<std::string> files_to_delete;
 
-	RefreshDirectory(directory, files_to_import, files_to_update, files_to_delete);
+	RefreshAssetsDirectory(files_to_import, files_to_update, files_to_delete);
 
 	for (uint i = 0; i < files_to_delete.size(); ++i)
 	{
-		//DeleteFromAssets(files_to_delete[i].c_str());
-		DeleteFromLibrary(files_to_delete[i].c_str());
+		DeleteFromAssets(files_to_delete[i].c_str());
 	}
 	for (uint i = 0; i < files_to_update.size(); ++i)
 	{
@@ -183,22 +175,15 @@ void M_ResourceManager::RefreshDirectoryFiles(const char* directory)
 	files_to_import.clear();
 }
 
-void M_ResourceManager::RefreshDirectory(const char* directory, std::vector<std::string>& files_to_import, 
-												std::vector<std::string>& files_to_update, std::vector<std::string>& files_to_delete)
+void M_ResourceManager::RefreshAssetsDirectory(std::vector<std::string>& files_to_import, std::vector<std::string>& files_to_update, std::vector<std::string>& files_to_delete)
 {
-	if (directory == nullptr)
-	{
-		LOG("[ERROR] Resource Manager: Could not Refresh Directory! Error: Directory string was nullptr.");
-		return;
-	}
-	
 	std::vector<std::string> directories;
 	std::vector<std::string> asset_files;
 	std::vector<std::string> meta_files;
 	std::map<std::string, std::string> file_pairs;
 
-	App->file_system->DiscoverAllFiles(directory, asset_files, directories, DOTLESS_META_EXTENSION);				// Directories (folders) will be ignored for now.
-	App->file_system->GetAllFilesWithExtension(directory, DOTLESS_META_EXTENSION, meta_files);
+	App->file_system->DiscoverAllFiles(ASSETS_DIRECTORY, asset_files, directories, DOTLESS_META_EXTENSION);			// Directories (folders) will be ignored for now.
+	App->file_system->GetAllFilesWithExtension(ASSETS_DIRECTORY, DOTLESS_META_EXTENSION, meta_files);
 	
 	FindFilesToImport(asset_files, meta_files, file_pairs, files_to_import);										// Always call in this order!
 	FindFilesToUpdate(file_pairs, files_to_update);																	// At the very least FindFilesToImport() has to be the first to be called
@@ -228,15 +213,10 @@ void M_ResourceManager::FindFilesToImport(const std::vector<std::string>& asset_
 		meta_file	= asset_files[i] + META_EXTENSION;
 		item		= meta_tmp.find(meta_file);
 
-		if (item != meta_tmp.end() /*&& MetaFileIsValid(asset_files[i].c_str())*/)
+		if (item != meta_tmp.end())
 		{
-			file_pairs.emplace(asset_files[i], item->first);
-
-			if (!MetaFileIsValid(asset_files[i].c_str()))															// In case the pair exists but the meta file is outdated.
-			{
-				files_to_import.push_back(asset_files[i]);
-			}
-		}
+			file_pairs.emplace(asset_files[i], item->first);														// Putting meta_file as the key so FindFilesToDelete()
+		}																											// can be performed with ease.
 		else
 		{
 			files_to_import.push_back(asset_files[i]);
@@ -271,7 +251,7 @@ void M_ResourceManager::FindFilesToDelete(const std::vector<std::string>& meta_f
 		assets_path = meta_files[i];
 		assets_path.resize(assets_path.size() - std::string(META_EXTENSION).size());								// Dirty-but-quick way of eliminating the extension.
 
- 		if (file_pairs.find(assets_path) == file_pairs.end())														// If cannot find assets_path in the paired files.
+		if (file_pairs.find(assets_path) == file_pairs.end())														// If cannot find assets_path in the paired files.
 		{						
 			files_to_delete.push_back(assets_path);
 		}
@@ -330,12 +310,6 @@ bool M_ResourceManager::DeleteFromLibrary(const char* assets_path)
 	if (assets_path == nullptr)
 	{
 		LOG("[ERROR] Resource Manager: Could not delete Files from Library! Error: Given Assets Path was nullptr.");
-		return false;
-	}
-
-	if (!HasMetaFile(assets_path))
-	{
-		LOG("[ERROR] Resource Manager: Could not delete { %s }'s Files from Library! Error: Given Assets Path had no associated Meta File.", assets_path);
 		return false;
 	}
 
@@ -660,20 +634,11 @@ uint32 M_ResourceManager::ImportFile(const char* assets_path)
 		return 0;
 	}
 
-	if (App->file_system->GetFileExtension(assets_path) == "json" 
-		|| App->file_system->GetFileExtension(assets_path) == "JSON")													// TMP until R_Scene has been fully implemented.
-	{
-		return 0;
-	}
-
-	assets_path			= GetValidPath(assets_path);
+	assets_path			= GetValidAssetsPath(assets_path);
 	bool meta_is_valid	= MetaFileIsValid(assets_path);
 	if (!meta_is_valid)
 	{
-		if (HasMetaFile(assets_path))
-		{
-			DeleteFromLibrary(assets_path);																				// Cleaning any remaining Library files.
-		}
+		DeleteFromLibrary(assets_path);																				// Cleaning any remaining Library files.
 		
 		resource_uid = ImportFromAssets(assets_path); 
 
@@ -761,7 +726,7 @@ uint32 M_ResourceManager::LoadFromLibrary(const char* assets_path)
 	
 	std::string error_string = "[ERROR] Resource Manager: Could not Load File from the given Library Path";
 
-	assets_path = GetValidPath(assets_path);
+	assets_path = GetValidAssetsPath(assets_path);
 
 	if (assets_path == nullptr)
 	{
@@ -872,7 +837,7 @@ uint M_ResourceManager::SaveResourceToLibrary(Resource* resource)
 	return written;
 }
 
-const char* M_ResourceManager::GetValidPath(const char* assets_path)
+const char* M_ResourceManager::GetValidAssetsPath(const char* assets_path)
 {
 	if (assets_path == nullptr)
 	{
@@ -882,17 +847,11 @@ const char* M_ResourceManager::GetValidPath(const char* assets_path)
 	
 	std::string norm_path = App->file_system->NormalizePath(assets_path);
 
-	uint assets_path_start = norm_path.find("Assets");
-	uint engine_path_start = norm_path.find("Engine");
-	if (assets_path_start != std::string::npos)
+	uint dir_path_start = norm_path.find("Assets");
+	if (dir_path_start != std::string::npos)
 	{
-		norm_path = norm_path.substr(assets_path_start, norm_path.size());
-		assets_path = _strdup(norm_path.c_str());
-	}
-	else if (engine_path_start != std::string::npos)
-	{
-		norm_path = norm_path.substr(engine_path_start, norm_path.size());
-		assets_path = _strdup(norm_path.c_str());
+		norm_path = norm_path.substr(dir_path_start, norm_path.size());
+		assets_path = _strdup(norm_path.c_str());																							// ATTENTION: Memory Leak?
 	}
 	else
 	{
@@ -1046,37 +1005,12 @@ ParsonNode M_ResourceManager::LoadMetaFile(const char* assets_path, char** buffe
 	return ParsonNode(*buffer);
 }
 
-bool M_ResourceManager::HasMetaFile(const char* assets_path)
-{
-	if (assets_path == nullptr)
-	{
-		LOG("[ERROR] Resource Manager: Could not check whether or not the given path had an associated Meta File! Error: Given Assets Path was nullptr.");
-		return false;
-	}
-
-	std::string meta_path = assets_path + std::string(META_EXTENSION);
-
-	return App->file_system->Exists(meta_path.c_str());
-}
-
 bool M_ResourceManager::MetaFileIsValid(const char* assets_path)
 {
 	bool ret = true;
 
-	if (assets_path == nullptr)
-	{
-		LOG("[ERROR] Resource Manager: Could not validate Meta File! Error: Given Assets Path was nullptr.");
-		return 0;
-	}
-
-	std::string meta_path		= assets_path + std::string(META_EXTENSION);
-	std::string error_string	= "[ERROR] Resource Manager: Could not validate Meta File " + meta_path;
-
-	if (!App->file_system->Exists(meta_path.c_str()))
-	{
-		LOG("%s! Error: File System could not find the Meta File.", error_string.c_str());
-		return false;
-	}
+	std::string meta_path			= assets_path + std::string(META_EXTENSION);													// Will be used for [ERROR] Logs.
+	std::string error_string		= "[ERROR] Resource Manager: Could not validate Meta File " + meta_path;
 
 	char* buffer					= nullptr;
 	ParsonNode meta_root			= LoadMetaFile(assets_path, &buffer);

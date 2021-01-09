@@ -1,8 +1,6 @@
 #ifndef __E_PROJECT_H__
 #define __E_PROJECT_H__
 
-#include "Icons.h"
-
 #include "EditorPanel.h"
 
 class E_Project : public EditorPanel
@@ -24,10 +22,7 @@ private:
 	void DrawDirectoriesTree	(const char* root_node, const char* extension_to_filter);
 
 private:
-	char*	directory_to_display;
-
-	Icons	engine_icons;
-	bool	icons_are_loaded;
+	char* directory_to_display;
 };
 
 #endif // !__E_PROJECT_H__

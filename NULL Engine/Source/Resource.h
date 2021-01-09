@@ -7,8 +7,7 @@
 #include "Log.h"
 #include "ImportSettings.h"
 
-typedef unsigned int		uint;
-typedef unsigned __int32	uint32;
+typedef unsigned __int32 uint32;
 
 enum class RESOURCE_TYPE
 {
@@ -31,10 +30,7 @@ public:
 	const char*			GetTypeAsString			() const;
 	
 	uint32				GetUID					() const;
-	void				ForceUID				(const uint32& UID);
-	uint				GetReferences			() const;
-	void				SetReferences			(const uint& references);
-	const char*			GetName					() const;
+	void				ForceUID				(uint32 UID);
 
 	const char*			GetAssetsPath			() const;								// 
 	const char*			GetAssetsFile			() const;								// 
@@ -55,11 +51,11 @@ private:
 	RESOURCE_TYPE		type;
 
 	uint32				uid;															// UID for this Resource.
-	uint				references;
-	std::string			name;
+	const char*			name;
 
 	std::string			assets_path;													// Path of the file in the Assets directory. Will be used to avoid making duplicates.
 	std::string			assets_file;													// File and extension string of the texture in the Assets directory.
+
 	std::string			library_path;													// Path of the file in the Library directory. Will be used to avoid making duplicates.
 	std::string			library_file;													// File and extension string of the texture in the Library directory.
 

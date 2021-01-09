@@ -7,8 +7,6 @@
 
 class ParsonNode;
 
-class Resource;
-
 class GameObject;
 class C_Camera;
 
@@ -21,12 +19,10 @@ class E_Inspector;
 class E_Console;
 class E_Project;
 class E_Viewport;
-class E_Resources;
+class E_Game;
 class E_ImGuiDemo;
 class E_About;
 class E_LoadFile;
-
-typedef unsigned __int32 uint32;
 
 enum class IMGUI_STYLE
 {
@@ -96,14 +92,13 @@ public:																							// --- Panel/Window Methods. Acts as an interface 
 	void			SetCurrentCameraThroughEditor		(C_Camera* game_object);				// Hierarchy & Inspector:  
 	void			SetMasterCameraThroughEditor		();										// Hierarchy & Inspector: 
 
-	float2			GetWorldMousePositionThroughEditor	() const;								// Viewport: 
-	float2			GetWorldMouseMotionThroughEditor	() const;								// Viewport: 
-	float2			GetSceneTextureSizeThroughEditor	() const;								// Viewport: 
-	bool			ViewportIsHovered					() const;								// Viewport: 
-	bool			UsingGuizmoInScene					() const;								// Viewport: 
-	bool			HoveringGuizmo						() const;								// Viewport: 
+	float2			GetWorldMousePositionThroughEditor	() const;
+	float2			GetWorldMouseMotionThroughEditor	() const;
+	float2			GetSceneTextureSizeThroughEditor	() const;
 
-	void			GetResourcesThroughEditor			(std::map<uint32, Resource*>& resources) const;
+	bool			ViewportIsHovered					() const;
+	bool			UsingGuizmoInScene					() const;
+	bool			HoveringGuizmo						() const;
 
 	void			SaveSceneThroughEditor				(const char* scene_name);
 	void			LoadFileThroughEditor				(const char* path);						// Load File: Will send the given path to the Importer.
@@ -123,7 +118,6 @@ public:
 	E_Console*					console;
 	E_Project*					project;
 	E_Viewport*					viewport;
-	E_Resources*				resources;
 	E_ImGuiDemo*				imgui_demo;
 	E_About*					about;
 	E_LoadFile*					load_file;

@@ -1,10 +1,8 @@
 #ifndef __R_MATERIAL_H__
 #define __R_MATERIAL_H__
 
-#include "Color.h"
-
 #include "Resource.h"
-#include "MaterialSettings.h"
+#include "Color.h"
 
 class ParsonNode;
 
@@ -55,7 +53,7 @@ public:
 	Color					diffuse_color;
 
 private:
-	MaterialSettings		material_settings;
+	
 };
 
 #endif // !__R_MATERIAL_H__

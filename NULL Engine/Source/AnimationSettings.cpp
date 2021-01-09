@@ -12,7 +12,7 @@ AnimationSettings::~AnimationSettings()
 
 }
 
-bool AnimationSettings::Save(ParsonNode& settings) const
+bool AnimationSettings::SaveImportSettings(ParsonNode& settings) const
 {
 	bool ret = true;
 
@@ -21,7 +21,7 @@ bool AnimationSettings::Save(ParsonNode& settings) const
 	return ret;
 }
 
-bool AnimationSettings::Load(const ParsonNode& settings)
+bool AnimationSettings::LoadImportSettings(const ParsonNode& settings)
 {
 	bool ret = true;
 

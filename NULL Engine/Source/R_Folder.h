@@ -25,9 +25,6 @@ public:
 
 public:
 	std::vector<uint32> contained_resources;
-
-private:
-	// NO IMPORT SETTINGS
 };
 
 #endif // !_R_FOLDER_H__

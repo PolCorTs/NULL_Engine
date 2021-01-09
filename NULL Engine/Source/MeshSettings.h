@@ -11,8 +11,8 @@ public:
 	MeshSettings();
 	~MeshSettings();
 
-	bool Save(ParsonNode& settings) const override;
-	bool Load(const ParsonNode& settings) override;
+	bool SaveImportSettings(ParsonNode& settings) const override;
+	bool LoadImportSettings(const ParsonNode& settings) override;
 
 
 private:

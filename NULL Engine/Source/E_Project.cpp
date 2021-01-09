@@ -1,7 +1,6 @@
 #include <vector>
 #include <algorithm>
 
-#include "VariableTypedefs.h"
 #include "Macros.h"
 
 #include "PathNode.h"
@@ -26,8 +25,7 @@ directory_to_display			(nullptr),
 refresh_root_directory			(true),
 refresh_directory_to_display	(false),
 refresh_window_size				(true),
-icons_are_loaded				(false),
-dragged_resource				(nullptr)
+icons_are_loaded				(false)
 {
 	directory_to_display = new char[MAX_DIRECTORY_SIZE];
 	sprintf_s(directory_to_display, MAX_DIRECTORY_SIZE, "%s", ASSETS_PATH);
@@ -67,18 +65,12 @@ bool E_Project::CleanUp()
 	bool ret = true;
 
 	root_directory.children.clear();
-	dragged_resource = nullptr;
 	ClearResourcesToDisplay();
 
 	return ret;
 }
 
 // --- E_PRROJECT METHODS ---
-Resource* E_Project::GetDraggedResource()
-{
-	return dragged_resource;
-}
-
 void E_Project::CheckFlags()
 {
 	if (!icons_are_loaded)
@@ -247,7 +239,7 @@ void E_Project::DrawDirectoriesTree(const PathNode& root_node)
 		{
 			if (ImGui::IsItemClicked())
 			{
-				if (strcmp(directory_to_display, path.c_str()) != 0)
+				if (std::string(directory_to_display) != path)
 				{
 					sprintf_s(directory_to_display, MAX_DIRECTORY_SIZE, "%s", path.c_str());
 					refresh_directory_to_display = true;
@@ -283,26 +275,7 @@ void E_Project::DrawResourceIcons()
 		
 		tex_id = GetIconTexID(resources_to_display[i]);
 		ImGui::SetCursorPos(original_pos + icon_offset);
-		//ImGui::ImageButtonEx(i + 1, tex_id, icon_size, uv_0, uv_1, padding, bg_color, tint_color);
-		ImGui::Image(tex_id, icon_size, uv_0, uv_1, tint_color, bg_color);
-
-		if (resources_to_display[i]->GetType() == RESOURCE_TYPE::FOLDER)
-		{
-			if (ImGui::IsItemClicked())
-			{
-				std::string path = resources_to_display[i]->GetAssetsPath();
-				if (strcmp(directory_to_display , path.c_str()) != 0)
-				{
-					sprintf_s(directory_to_display, MAX_DIRECTORY_SIZE, "%s", path.c_str());
-					refresh_directory_to_display = true;
-					return;
-				}
-			}
-		}
-		else
-		{
-			ResourceDragAndDropEvent(resources_to_display[i], tex_id);
-		}
+		ImGui::ImageButtonEx(i + 1, tex_id, icon_size, uv_0, uv_1, padding, bg_color, tint_color);
 
 		ImGui::SetCursorPos(original_pos + text_offset);
 		ImGui::Text(GetDisplayString(resources_to_display[i]->GetAssetsFile(), 8).c_str());
@@ -313,39 +286,6 @@ void E_Project::DrawResourceIcons()
 			ImGui::SetCursorPos(next_item_pos);
 		}
 	}
-}
-
-void E_Project::ResourceDragAndDropEvent(Resource* resource, ImTextureID texture_id)
-{
-	if (resource == nullptr)
-	{
-		LOG("[ERROR] Editor Project Panel: Could not check for Resource Drag&Drop Event! Error: Given Resource* was nullptr.");
-		return;
-	}
-
-	if (ImGui::BeginDragDropSource(ImGuiDragDropFlags_SourceAllowNullID))
-	{
-		LOG("[WARNING] IS IT WORKING AT ALL???");
-		
-		ImGui::SetDragDropPayload("DRAGGED_RESOURCE", resource, sizeof(Resource));
-	
-		ImGui::Text("Dragging %s", resource->GetAssetsFile());
-		ImGui::Image(texture_id, icon_size);
-
-		dragged_resource = resource;
-
-		ImGui::EndDragDropSource();
-	}
-
-	/*if (ImGui::BeginDragDropTarget())
-	{
-		if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("DRAGGED_RESOURCE"))
-		{
-			LOG("[WARNING] MAYBE PUT THIS AS A LISTENER IN VIEWPORT???");
-		}
-
-		ImGui::EndDragDropTarget();
-	}*/
 }
 
 ImTextureID E_Project::GetIconTexID(Resource* resource) const

@@ -218,7 +218,6 @@ void GameObject::FreeChilds()
 	{
 		if (childs[i] != nullptr)
 		{
-			childs[i]->parent = nullptr;
 			childs[i]->to_delete = true;									// Will set the children of the GameObject being deleted to be deleted too in M_Scene's game_objects vector.
 			//childs[i]->CleanUp();											// Recursively cleaning up the the childs.
 		}
@@ -468,7 +467,7 @@ void GameObject::GetAllChilds(std::map<std::string, GameObject*>& childs)
 {
 	if (this->childs.empty())
 	{
-		LOG("[WARNING] Game Object: GameObject { %s } did not have any childs!", this->GetName());
+		LOG("[WARNING] Game Object: GameObject { %s } did not have any childs!");
 		return;
 	}
 

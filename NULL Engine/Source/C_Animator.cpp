@@ -1,7 +1,6 @@
 #include "MathGeoLib/include/Geometry/LineSegment.h"
 
 #include "Profiler.h"
-#include "JSONParser.h"
 
 #include "Time.h"
 
@@ -55,16 +54,6 @@ bool C_Animator::Update()
 	
 	bool ret = true;
 
-	if (!animations_to_add.empty())
-	{
-		for (uint i = 0; i < animations_to_add.size(); ++i)
-		{
-			AddAnimation(animations_to_add[i]);
-		}
-
-		animations_to_add.clear();
-	}
-
 	if (play || step)
 	{
 		if (current_clip != nullptr)
@@ -96,8 +85,6 @@ bool C_Animator::CleanUp()
 
 	display_bones.clear();
 
-	animations_to_add.clear();
-
 	return ret;
 }
 
@@ -105,37 +92,7 @@ bool C_Animator::SaveState(ParsonNode& root) const
 {
 	bool ret = true;
 
-	root.SetNumber("Type", (double)GetType());
 
-	// Animations
-	ParsonArray animations_array = root.SetArray("Animations");
-	for (auto animation = animations.cbegin(); animation != animations.cend(); ++animation)
-	{
-		ParsonNode animation_node = animations_array.SetNode((*animation)->GetName());
-
-		animation_node.SetNumber("UID", (*animation)->GetUID());
-		animation_node.SetString("Name", (*animation)->GetAssetsFile());
-		animation_node.SetString("Path", (*animation)->GetLibraryPath());
-		animation_node.SetString("File", (*animation)->GetLibraryFile());
-	}
-
-	// Clips
-	ParsonArray clips_array = root.SetArray("Clips");
-	for (auto clip = clips.cbegin(); clip != clips.cend(); ++clip)
-	{
-		if (strstr(clip->first.c_str(), "Default") != nullptr)
-		{
-			continue;
-		}
-		
-		ParsonNode clip_node = clips_array.SetNode(clip->second.GetName());
-		clip->second.SaveState(clip_node);
-	}
-
-	// Current Clip
-	ParsonNode current_clip_node = root.SetNode("CurrentClip");
-	current_clip_node.SetString("AnimationName", current_clip->GetAnimationName());
-	current_clip_node.SetString("Name", current_clip->GetName());
 
 	return ret;
 }
@@ -144,43 +101,7 @@ bool C_Animator::LoadState(ParsonNode& root)
 {
 	bool ret = true;
 
-	ParsonArray animations_array = root.GetArray("Animations");
-	for (uint i = 0; i < animations_array.size; ++i)
-	{
-		ParsonNode animation_node = animations_array.GetNode(i);
-		if (!animation_node.NodeIsValid())
-		{
-			continue;
-		}
 
-		std::string assets_path = ASSETS_MODELS_PATH + std::string(animation_node.GetString("Name"));
-		App->resource_manager->AllocateResource((uint32)animation_node.GetNumber("UID"), assets_path.c_str());
-		
-		R_Animation* r_animation = (R_Animation*)App->resource_manager->RequestResource((uint32)animation_node.GetNumber("UID"));
-		if (r_animation != nullptr)
-		{
-			animations_to_add.push_back(r_animation);
-			//AddAnimation(r_animation);
-		}
-	}
-
-	ParsonArray clips_array = root.GetArray("Clips");
-	for (uint i = 0; i < clips_array.size; ++i)
-	{
-		ParsonNode clip_node	= clips_array.GetNode(i);
-		AnimatorClip clip		= AnimatorClip();
-
-		clip.LoadState(clip_node);
-
-		clips.emplace(clip.GetName(), clip);
-	}
-
-	ParsonNode current_clip_node = root.GetNode("CurrentClip");
-	auto item = clips.find(current_clip_node.GetString("Name"));
-	if (item != clips.end())
-	{
-		SetCurrentClip(&item->second);
-	}
 
 	return ret;
 }
@@ -200,7 +121,7 @@ bool C_Animator::StepAnimation()
 		if (!current_clip->IsLooped())
 		{
 			Stop();
-			ResetBones();
+			//ResetDisplayBones();
 			return false;
 		}
 	}
@@ -249,25 +170,6 @@ bool C_Animator::BlendAnimation()
 
 
 	return ret;
-}
-
-void C_Animator::ResetBones()
-{
-	if (current_clip == nullptr)
-	{
-		LOG("[ERROR] Animator Component: Could not Reset Bones! Error: Current Clip was nullptr.");
-		return;
-	}
-	
-	for (auto bone = current_bones.cbegin(); bone != current_bones.cend(); ++bone)
-	{
-		const Transform& transform = Transform(bone->game_object->GetComponent<C_Transform>()->GetLocalTransform());
-		const Transform& interpolated_transform = GetInterpolatedTransform((double)current_clip->GetStart(), bone->channel, transform);
-
-		bone->game_object->GetComponent<C_Transform>()->ImportTransform(interpolated_transform);
-	}
-
-	UpdateDisplayBones();
 }
 
 const Transform C_Animator::GetInterpolatedTransform(const double& current_keyframe, const Channel& channel, const Transform& original_transform) const
@@ -603,38 +505,13 @@ bool C_Animator::AddClip(const AnimatorClip& clip)
 	return true;
 }
 
-void C_Animator::PlayClip(const std::string& clip_name, const uint& blend_frames)
-{
- 	Stop();
-	
-	auto item = clips.find(clip_name);
-	if (item == clips.end())
-	{
-		LOG("[ERROR] Animator Component: Could not Play Clip! Error: Could not find any clip with the given name!");
-		return;
-	}
-	
-	SetCurrentClip(&item->second);
-
-	Play();
-
-	//const AnimatorClip& clip = item->second;
-}
-
 bool C_Animator::Play()
 {
-	if (current_clip == nullptr)
-	{
-		return false;
-	}
-	
 	play	= true;
 
 	pause	= false;
 	step	= false;
 	stop	= false;
-
-	current_clip->playing = true;
 
 	return play;
 }
@@ -677,7 +554,6 @@ bool C_Animator::Stop()
 	pause	= false;
 	step	= false;
 	
-	current_clip->playing = false;
 	current_clip->ClearClip();
 
 	return stop;

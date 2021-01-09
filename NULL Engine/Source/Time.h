@@ -2,7 +2,6 @@
 #define __TIME_H__
 
 #include "Timer.h"
-#include "PerfectTimer.h"
 #include "Hourglass.h"
 #include "FrameData.h"
 
@@ -20,10 +19,6 @@ namespace Time
 		void		Update				();								// Will update the frame data for the frame it was called on. frame_count, prev_sec_frames, dt..
 		void		DelayUntilFrameCap	(uint frame_cap);
 
-		void		StartPerfTimer		();
-		void		StopPerfTimer		();
-		float		PeekPerfTimer		();
-
 		Hourglass	GetClock			();
 		FrameData	GetFrameData		();
 
@@ -38,7 +33,6 @@ namespace Time
 		{
 			//static	Timer			startup_timer;
 			static	Timer			frame_timer;
-			static	PerfectTimer	perf_timer;
 			static	Hourglass		clock;
 			static	FrameData		frame_data;
 		}

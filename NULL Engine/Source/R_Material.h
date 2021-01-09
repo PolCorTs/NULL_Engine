@@ -4,8 +4,6 @@
 #include "Resource.h"
 #include "Color.h"
 
-class ParsonNode;
-
 typedef unsigned int uint;
 
 enum class TEXTURE_TYPE									// The enum values are set according to the values of Assimp's aiTextureType enum.
@@ -44,9 +42,6 @@ public:
 	~R_Material();
 
 	bool CleanUp() override;
-
-	bool SaveMeta(ParsonNode& meta_root) const override;
-	bool LoadMeta(const ParsonNode& meta_root) override;
 
 public:
 	std::vector<Material>	materials;									// In the end the amount of materials that will be used is "constant". It could be an array as mat[7] = { 0, 0,... };

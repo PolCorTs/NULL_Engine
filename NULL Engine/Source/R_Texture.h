@@ -3,8 +3,6 @@
 
 #include "Resource.h"
 
-class ParsonNode;
-
 typedef unsigned __int32 uint;
 
 enum class TEXTURE_FORMAT													// The enum values are set according to the values of DevIL's define values/flags.
@@ -39,9 +37,6 @@ public:
 	~R_Texture();
 
 	bool CleanUp() override;
-
-	bool SaveMeta(ParsonNode& meta_root) const override;
-	bool LoadMeta(const ParsonNode& meta_root) override;
 
 public:
 	Texture			GetTextureData			() const;

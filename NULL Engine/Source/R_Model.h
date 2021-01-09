@@ -6,8 +6,6 @@
 #include "MathGeoTransform.h"
 #include "Resource.h"
 
-class ParsonNode;
-
 typedef unsigned __int32 uint32;
 
 struct ModelNode
@@ -30,10 +28,7 @@ public:
 	R_Model();
 	~R_Model();
 
-	bool CleanUp() override;
 
-	bool SaveMeta(ParsonNode& meta_root) const override;
-	bool LoadMeta(const ParsonNode& meta_root) override;
 
 public:
 	std::vector<ModelNode> model_nodes;

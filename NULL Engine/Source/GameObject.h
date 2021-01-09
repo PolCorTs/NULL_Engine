@@ -99,7 +99,6 @@ public:																									// --- COMPONENT GETTERS AND SETTERS
 		case COMPONENT_TYPE::MATERIAL:	{ return "Material"; }	break;
 		case COMPONENT_TYPE::LIGHT:		{ return "Light"; }		break;
 		case COMPONENT_TYPE::CAMERA:	{ return "Camera"; }	break;
-		case COMPONENT_TYPE::ANIMATION	{ return "Animation"; } break;
 		}
 
 		return "NONE";

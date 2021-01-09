@@ -14,7 +14,6 @@ enum class COMPONENT_TYPE
 	MATERIAL,
 	LIGHT,
 	CAMERA,
-	ANIMATION
 };
 
 class Component

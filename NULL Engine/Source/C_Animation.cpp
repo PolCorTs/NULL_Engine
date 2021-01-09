@@ -1,7 +1,5 @@
 #include "MathGeoLib/include/Geometry/LineSegment.h"
 
-#include "Time.h"
-
 #include "Channel.h"
 
 #include "Application.h"
@@ -26,10 +24,9 @@ current_root_bone	(nullptr)
 	step				= false;
 	stop				= true;
 
-	animation_time		= 0.0f;
-	animation_frame		= 0.0f;
-
 	playback_speed		= 1.0f;
+	animation_time		= 0.0f;
+
 	loop_animation		= false;
 	play_on_start		= true;
 	camera_culling		= true;
@@ -47,11 +44,7 @@ bool C_Animation::Update()
 {
 	bool ret = true;
 
-	if (play || step)
-	{
-		StepAnimation();
-		step = false;
-	}
+
 
 	return ret;
 }
@@ -95,16 +88,7 @@ bool C_Animation::StepAnimation()
 {
 	bool ret = true;
 
-	animation_time += Time::Real::GetDT();
-	animation_frame = animation_time / GetCurrentTicksPerSecond();
 
-	if (blending_animation != nullptr)
-	{
-		ret = BlendAnimation();
-		return ret;
-	}
-
-	
 
 	return ret;
 }
@@ -191,11 +175,16 @@ void C_Animation::GenerateBoneSegments(GameObject* bone)
 
 		display_bone.a = bone_transform->GetWorldPosition();
 		display_bone.b = bone->childs[i]->GetComponent<C_Transform>()->GetWorldPosition();
+		
+		//display_bone.a = bone_transform->GetLocalPosition();
+		//display_bone.b = bone->childs[i]->GetComponent<C_Transform>()->GetLocalPosition();
 
 		display_bones.push_back(display_bone);
 
 		GenerateBoneSegments(bone->childs[i]);
 	}
+
+	return;
 }
 
 void C_Animation::AddAnimation(R_Animation* r_animation)
@@ -230,7 +219,6 @@ bool C_Animation::Pause()
 	if (play)
 	{
 		pause	= true;
-		play	= false;
 		step	= false;
 	}
 	else
@@ -243,7 +231,7 @@ bool C_Animation::Pause()
 
 bool C_Animation::Step()
 {	
-	if (pause)
+	if (play && pause)
 	{
 		step = true;
 	}
@@ -354,14 +342,14 @@ float C_Animation::GetAnimationTime() const
 	return animation_time;
 }
 
-float C_Animation::GetCurrentTicksPerSecond() const
+float C_Animation::GetTicksPerSecond() const
 {
-	return ((current_animation == nullptr) ? 0.0f : current_animation->GetCurrentTicksPerSecond());
+	return ((current_animation == nullptr) ? 0.0f : current_animation->GetTicksPerSecond());
 }
 
-float C_Animation::GetCurrentDuration() const
+float C_Animation::GetDuration() const
 {
-	return ((current_animation == nullptr) ? 0.0f : current_animation->GetCurrentDuration());
+	return ((current_animation == nullptr) ? 0.0f : current_animation->GetDuration());
 }
 
 void C_Animation::SetPlaybackSpeed(const float& playback_speed)

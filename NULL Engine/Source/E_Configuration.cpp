@@ -60,7 +60,7 @@ bool E_Configuration::Draw(ImGuiIO& io)
 	PhysicsMenu();
 	SystemInfoMenu();
 	TimeManagementMenu();
-	ImGuiEditorsMenu();
+	ImGuiEditorMenu();
 
 	ImGui::End();
 
@@ -349,23 +349,13 @@ bool E_Configuration::TimeManagementMenu()
 	return ret;
 }
 
-bool E_Configuration::ImGuiEditorsMenu()
+bool E_Configuration::ImGuiEditorMenu()
 {
 	bool ret = true;
 	
-	if (ImGui::CollapsingHeader("ImGui Editors"))
+	if (ImGui::CollapsingHeader("ImGui Editor"))
 	{
-		if (ImGui::TreeNodeEx("[IMGUI] Style Editor"))
-		{
-			ImGui::ShowStyleEditor();
-			ImGui::TreePop();
-		}
-
-		if (ImGui::TreeNodeEx("[CUSTOM] Theme Generator"))
-		{
-			ImGui::ThemeGenerator(true);
-			ImGui::TreePop();
-		}
+		ImGui::ShowStyleEditor();
 	}
 
 	return ret;

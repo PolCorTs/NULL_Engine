@@ -10,8 +10,6 @@
 
 C_AudioListener::C_AudioListener(GameObject* owner) : Component(owner, COMPONENT_TYPE::AUDIO_LISTENER)
 {
-	
-
 	vec3 position;
 	position.x = owner->transform->local_position.x;
 	position.y = owner->transform->local_position.y;
@@ -34,9 +32,9 @@ bool C_AudioListener::Update()
 {
 	bool ret = true;
 	C_Camera* cam = App->camera->current_camera;
-	vec pos = cam->frustum.pos;
-	vec front = cam->frustum.front;
-	vec top = cam->frustum.up;
+	float3 pos = cam->frustum.pos;
+	float3 front = cam->frustum.front;
+	float3 top = cam->frustum.up;
 
 	wwiseGO->SetPosition(pos.x, pos.y, pos.z, front.x, front.y, front.z, top.x, top.y, top.z);
 

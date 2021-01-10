@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="M_Audio.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\Color.cpp" />
     <ClCompile Include="Source\Component.cpp" />
@@ -122,6 +123,7 @@
     <ClCompile Include="Source\T_Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="M_Audio.h" />
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\Assimp.h" />
     <ClInclude Include="Source\Color.h" />

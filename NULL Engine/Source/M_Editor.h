@@ -65,7 +65,7 @@ public:
 	void			CheckShowHideFlags					();										// Will check whether or not each of the panels must be enabled or disabled.
 
 	bool			EditorIsBeingHovered				() const;								// Will check whether or not any of the editor panels is being hovered.
-	bool			EditorSceneIsBeingClicked			() const;
+	
 	bool			RenderEditorPanels					() const;								// Will call ImGui::Render() to render all the panels on the screen.
 	bool			InitializeImGui						() const;								// Creates an ImGui Context and sets an initial configuration for it.
 
@@ -100,6 +100,7 @@ public:																							// --- Panel/Window Methods. Acts as an interface 
 
 	bool			SceneIsHovered						() const;
 	bool			UsingGuizmoInScene					() const;
+	void			SaveSceneThroughEditor				(const char* scene_name);
 	bool			HoveringGuizmo						() const;
 	void			LoadFileThroughEditor				(const char* path);						// Load File: Will send the given path to the Importer.
 

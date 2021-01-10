@@ -288,10 +288,7 @@ bool M_Editor::EditorIsBeingHovered() const
 	return false;
 }
 
-bool M_Editor::EditorSceneIsBeingClicked() const
-{
-	return App->editor->scene->IsClicked();
-}
+
 
 bool M_Editor::RenderEditorPanels() const
 {
@@ -499,6 +496,11 @@ bool M_Editor::HoveringGuizmo() const
 bool M_Editor::SelectedIsSceneRoot() const
 {
 	return (App->scene->GetSelectedGameObject() == App->scene->GetSceneRoot());
+}
+
+void M_Editor::SaveSceneThroughEditor(const char* scene_name)
+{
+	App->scene->SaveScene(scene_name);
 }
 
 void M_Editor::LoadFileThroughEditor(const char* path)

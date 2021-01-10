@@ -16,8 +16,7 @@ public:
 	bool CleanUp		() override;
 
 private:
-	void CheckSceneIsClicked		();
-
+	
 	void AdaptTextureToWindowSize	();
 	void DrawSceneTexture			();
 

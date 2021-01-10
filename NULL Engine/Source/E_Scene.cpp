@@ -35,7 +35,7 @@ bool E_Scene::Draw(ImGuiIO& io)
 
 	ImGui::Begin("Game");
 	
-	CheckSceneIsClicked();
+	SetIsHovered();
 	
 	AdaptTextureToWindowSize();
 	DrawSceneTexture();
@@ -45,8 +45,6 @@ bool E_Scene::Draw(ImGuiIO& io)
 	ImGui::Begin("Scene");
 
 	SetIsHovered();
-
-	CheckSceneIsClicked();
 
 	AdaptTextureToWindowSize();
 	DrawSceneTexture();
@@ -134,38 +132,6 @@ bool E_Scene::HoveringGuizmo()
 	return ImGuizmo::IsOver();
 }
 
-void E_Scene::CheckSceneIsClicked()
-{
-	SetIsHovered();
-
-	//if (ImGui::IsWindowHovered())
-	//{
-	//	ImGui::FocusWindow(ImGui::GetCurrentWindow());
-	//}
-	//else
-	//{
-	//	//ImGui::FocusWindow();
-	//	
-	//	/*if (ImGui::IsWindowFocused())
-	//	{
-	//		if (ImGui::IsMouseClicked(ImGuiMouseButton_Left) 
-	//			|| ImGui::IsMouseClicked(ImGuiMouseButton_Right) 
-	//			|| ImGui::IsMouseClicked(ImGuiMouseButton_Middle))
-	//		{
-	//			ImGui::FocusWindow(nullptr);
-	//		}
-	//	}*/
-	//}
-	//
-	//if (ImGui::IsWindowFocused())
-	//{
-	//	SetIsClicked(true);
-	//}
-	//else
-	//{
-	//	SetIsClicked(false);
-	//}
-}
 
 void E_Scene::AdaptTextureToWindowSize()
 {	

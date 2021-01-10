@@ -1,5 +1,6 @@
 #ifndef __TIME_H__
 #define __TIME_H__
+#include "T_Timer.h"
 
 typedef unsigned int uint;
 
@@ -7,21 +8,15 @@ namespace Time
 {
 	namespace Real
 	{
-		void UpdateFrameData();											// Will update the frame data for the frame it was called on. frame_count, prev_sec_frames, dt..
-	}
 
-	namespace Game
-	{
-		// See Time Management presentation. Slide nº 5.
-		void UpdateFrameData();
+			static T_Timer real_time;
 
-		void ActivateClock();
-		void DeactivateClock();
+			static bool pause;
 
-		bool Play();
-		bool Pause();
-		bool Step(uint num_steps);
-		bool Stop();
+			void	InitRealTime();
+			float	GetDt();
+			void	UpdateFrameData();
+		
 	}
 }
 

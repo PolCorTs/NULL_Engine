@@ -8,7 +8,8 @@ class E_Toolbar : public EditorPanel
 public:
 	E_Toolbar();
 	~E_Toolbar();
-
+	void PlayAndStopButtons();
+	void TimeDisplays();
 	bool Draw(ImGuiIO& io) override;
 	bool CleanUp() override;
 

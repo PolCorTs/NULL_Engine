@@ -2,7 +2,7 @@
 
 #include "Wwise.h"
 #include "Wwise/IO/Win32/AkFilePackageLowLevelIOBlocking.h"
-#include "Game\Assets\Sounds\Wwise_IDs.h"
+#include "Resources\Assets\Sounds\Wwise_IDs.h"
 #include "Application.h"
 
 #define BANKNAME_INIT "Assets/Sounds/Init.bnk"
@@ -15,7 +15,7 @@ M_Audio::M_Audio(bool start_enabled) : Module("Audio", start_enabled) {}
 
 M_Audio::~M_Audio() {}
 
-bool M_Audio::Init(json file)
+bool M_Audio::Init()
 {
 	InitWwise();
 
@@ -29,7 +29,7 @@ bool M_Audio::Start()
 	return true;
 }
 
-update_status M_Audio::PostUpdate(float dt)
+UPDATE_STATUS M_Audio::PostUpdate(float dt)
 {
 	SoundEngine::RenderAudio();
 

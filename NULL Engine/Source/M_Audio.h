@@ -3,7 +3,8 @@
 
 #include "Module.h"
 #include "glmath.h"
-#include <AK/SoundEngine/Common/AkTypes.h>
+#include "globals.h"
+#include <Wwise/AK/SoundEngine/Common/AkTypes.h>
 
 class WwiseGameObject
 {
@@ -42,9 +43,9 @@ public:
 	M_Audio(bool start_enabled = true);
 	virtual ~M_Audio();
 
-	bool Init(json file);
+	bool Init();
 	bool Start();
-	update_status PostUpdate(float dt);
+	UPDATE_STATUS PostUpdate(float dt);
 	bool CleanUp();
 	void Tests(AkGameObjectID id);
 

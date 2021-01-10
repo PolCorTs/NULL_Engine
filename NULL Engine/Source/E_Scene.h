@@ -30,6 +30,7 @@ public:
 	float2 GetSceneTextureSize();
 
 	bool UsingGuizmo();
+	bool HoveringGuizmo();
 
 private:
 	ImVec2					tex_size;
@@ -38,6 +39,7 @@ private:
 
 	ImGuizmo::OPERATION		guizmo_operation;
 	ImGuizmo::MODE			guizmo_mode;
+	bool					using_guizmo;
 };
 
 #endif // !__E_SCENE_H__

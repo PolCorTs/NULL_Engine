@@ -99,7 +99,7 @@ UPDATE_STATUS M_Camera3D::Update(float dt)
 {
 	if (App->editor->SceneIsHovered())
 	{
-		if (App->editor->EditorSceneIsBeingClicked() && !App->editor->UsingGuizmoInScene())
+		if (App->editor->EditorSceneIsBeingClicked() && !App->editor->HoveringGuizmo())
 		{
 			if (App->input->GetMouseButton(SDL_BUTTON_LEFT) == KEY_STATE::KEY_DOWN)
 			{
@@ -108,8 +108,7 @@ UPDATE_STATUS M_Camera3D::Update(float dt)
 		}
 	}
 	
-	if (App->editor->EditorSceneIsBeingClicked())
-	{	
+		
 		if (App->input->GetMouseButton(SDL_BUTTON_RIGHT) == KEY_STATE::KEY_REPEAT)
 		{
 			WASDMovement();
@@ -160,7 +159,7 @@ UPDATE_STATUS M_Camera3D::Update(float dt)
 			float3 target = App->scene->GetSelectedGameObject()->GetTransformComponent()->GetWorldPosition();
 			Focus(target);
 		}
-	}
+	
 
 	return UPDATE_STATUS::CONTINUE;
 }

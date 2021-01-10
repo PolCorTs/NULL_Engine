@@ -13,6 +13,7 @@
 #include "M_Camera3D.h"
 #include "M_FileSystem.h"
 #include "M_ResourceManager.h"
+#include "M_Audio.h"
 
 #include "Application.h"
 
@@ -41,6 +42,7 @@ resource_manager(nullptr)
 	editor				= new M_Editor();
 	file_system			= new M_FileSystem();
 	resource_manager	= new M_ResourceManager();
+	audio				= new M_Audio();
 
 	// The order of calls is very important!
 	// Modules will Init() Start() and Update in this order

@@ -456,9 +456,6 @@
     <ClCompile Include="Source\Dependencies\ImGuizmo\include\ImGuizmo.cpp">
       <Filter>Dependencies\ImGuizmo</Filter>
     </ClCompile>
-    <ClCompile Include="M_Audio.cpp">
-      <Filter>Source\1_Modules</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
@@ -994,9 +991,6 @@
     </ClInclude>
     <ClInclude Include="Source\Dependencies\ImGuizmo\include\ImGuizmo.h">
       <Filter>Dependencies\ImGuizmo</Filter>
-    </ClInclude>
-    <ClInclude Include="M_Audio.h">
-      <Filter>Source\1_Modules</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

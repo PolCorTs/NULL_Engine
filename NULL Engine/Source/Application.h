@@ -18,6 +18,7 @@ class M_Editor;
 class M_Camera3D;
 class M_FileSystem;
 class M_ResourceManager;
+class M_Audio;
 
 class Application
 {
@@ -77,6 +78,7 @@ public:
 	M_Camera3D*				camera;
 	M_FileSystem*			file_system;
 	M_ResourceManager*		resource_manager;
+	M_Audio*				audio;
 
 	bool					play;
 	bool					pause;														// Will keep track of whether or not the applcation is currently paused.

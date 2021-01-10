@@ -2,6 +2,7 @@
 #define __C_CAMERA_H__
 
 #include "MathGeoFrustum.h"
+#include "MathGeoLib/include/MathGeoLib.h"
 #include "MathGeoLib/include/Math/float2.h"
 #include "Component.h"
 
@@ -78,9 +79,9 @@ public:																										// --- CAMERA FLAGS
 	void		SetIsCulling				(const bool& set_to);
 	void		SetOrthogonalView			(const bool& set_to);
 	void		SetFrustumIsHidden			(const bool& set_to);
-
+	Frustum frustum;	
 private:
-	Frustum frustum;																						//
+																						//
 
 	Plane*	frustum_planes;																					// --- FRUSTUM CULLING
 	float3* frustum_vertices;																				// -------------------

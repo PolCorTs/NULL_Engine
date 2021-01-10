@@ -69,7 +69,7 @@ public:
 	//bool		update_world_transform;												// Will be set to true if local_transform has been modified and world_transform has been not synced to it.
 	//bool		local_is_dirty;														// Using Dirty flags + local_transform: Would be used to prevent the local_trfm from being used while dirty.
 
-private:
+public:
 	float4x4	local_transform;													// Will represent the position, rotation and scale of the transform in Local Space.
 	float4x4	world_transform;													// Will represent the position, rotation and scale of the transform in World Space.
 	

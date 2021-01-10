@@ -14,6 +14,8 @@ enum class COMPONENT_TYPE
 	MATERIAL,
 	LIGHT,
 	CAMERA,
+	AUDIO_SOURCE,
+	AUDIO_LISTENER
 };
 
 class Component
@@ -45,7 +47,8 @@ private:
 	bool			is_active;															//
 
 	COMPONENT_TYPE	type;																//
-	GameObject*		owner;																// 
+	GameObject*		owner;	
+	// 
 };
 
 #endif // !__COMPONENT_H__

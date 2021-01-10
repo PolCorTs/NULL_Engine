@@ -88,22 +88,22 @@ public:
 
 	GameObject*					parent;
 	C_Transform*				transform;													// Don't know what to do with this. Maybe like Unity? Or have it like the rest of comps?
-
+	
 	bool						is_master_root;												//
 	bool						is_scene_root;												// Will be set to true if this GameObject is M_Scene's scene root object.
 	bool						to_delete;													// Will determine whether or not the GameObject should be deleted. See M_Scene's DeleteGameObject().
-
+	std::string					name;
 	OBB							obb;
 	AABB						aabb;
 
 	float3*						obb_vertices;
 	float3*						aabb_vertices;
-
+	uint32						uid;
 	bool						show_bounding_boxes;
 
 private:
-	uint32						uid;
-	std::string					name;
+	
+	
 	bool						is_active;
 	bool						is_static;
 

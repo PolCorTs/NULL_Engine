@@ -42,7 +42,6 @@ public:
 	COMPONENT_TYPE	GetType				() const;										//
 	GameObject*		GetOwner			() const;										//
 
-private:
 	uint32			id;																	// 
 	bool			is_active;															//
 

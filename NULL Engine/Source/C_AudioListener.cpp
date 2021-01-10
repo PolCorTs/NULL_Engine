@@ -42,14 +42,14 @@ bool C_AudioListener::Update()
 	return ret;
 }
 
-bool C_Transform::SaveState(ParsonNode& root) const
+bool C_AudioListener::SaveState(ParsonNode& root) const
 {
 	bool ret = true;
 
 	return ret;
 }
 
-bool C_Transform::LoadState(ParsonNode& root)
+bool C_AudioListener::LoadState(ParsonNode& root)
 {
 	bool ret = true;
 

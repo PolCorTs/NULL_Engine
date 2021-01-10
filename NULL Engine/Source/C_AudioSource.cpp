@@ -6,6 +6,8 @@
 #include "C_Transform.h"
 #include "C_Camera.h"
 #include "M_Scene.h"
+#include "ImGui/include/imgui.h"
+
 
 C_AudioSource::C_AudioSource(GameObject* owner) : Component(owner, COMPONENT_TYPE::AUDIO_SOURCE)
 {

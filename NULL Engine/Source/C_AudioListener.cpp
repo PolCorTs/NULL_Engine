@@ -6,6 +6,7 @@
 #include "C_Transform.h"
 #include "C_Camera.h"
 #include "M_Scene.h"
+#include "ImGui/include/imgui.h"
 
 C_AudioListener::C_AudioListener(GameObject* owner) : Component(owner, COMPONENT_TYPE::AUDIO_LISTENER)
 {
